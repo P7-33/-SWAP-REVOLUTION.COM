@@ -1,4 +1,4 @@
-NIT## BITCOIN-BROWSER
+NIT### BITCOIN-BROWSER
 https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git
 New coin with the genesis of Bitcoin
 
