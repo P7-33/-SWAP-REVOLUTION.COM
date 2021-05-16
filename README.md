@@ -1,4 +1,5 @@
-### BITCOIN-BROWSER
+# BITCOIN-BROWSER #
+
 New coin with the genesis of Bitcoin
 NIT### BITCOIN-BROWSER
 https://github.com/P7-33/BROSER-COIN.wiki.git
