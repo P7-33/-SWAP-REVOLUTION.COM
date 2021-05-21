@@ -1,9 +1,8 @@
 # BITCOIN-BROWSER #
 
+https://github.com/P7-33/BITCOIN-BROWSER.wiki.git
 New coin with the genesis of Bitcoin
 NIT### BITCOIN-BROWSER
-https://github.com/P7-33/BROSER-COIN.wiki.git
-https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git
 New coin with the genesis of Bitcoin
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
@@ -1232,9 +1231,9 @@ release-notes.md
 ￼	
 ￼
 contrib/aur/bitcoin browser-bchn/PKGBUILD
-# Maintainer: pathom <@afortunado 21>
-# Contributor: pathom <@afortunado21>
-
+# Maintainer: pathom <@P7-33BROWSER COIN>
+# Contributor: pathom <@P7-33BROWSER COIN>
+https://github.com/P7-33/BITCOIN-BROWSER.wiki.git
 pkgname=bitcoin Browser
 pkgver=0.22.8
 pkgver=0.22.9
@@ -1247,8 +1246,8 @@ license=('MIT')
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
 contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
-# Maintainer: pathom <afortunado 21>
-# Contributor: Pathom<afortunad 21>
+# Maintainer: <@P7-33BROWSER COIN>
+# Contributor: <@P7-33BROWSER COIN>
 
 pkgname=bitcoin-BW-qt-bchn
 pkgver=0.22.8
