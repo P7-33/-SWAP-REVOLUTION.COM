@@ -1177,7 +1177,8 @@ Use the `-v` option for verbose output.
 | [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
 | [`lint-shell.sh`](lint/lint-shell.sh) | [yq](https://github.com/kislyuk/yq) | default | `pip3 install yq`
 | [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | `pip3 install codespell==1.17.1`
-
+$ python max_money.py
+Total BTC to ever be created: 2099999997690000
 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
 
 #### Running the tests
