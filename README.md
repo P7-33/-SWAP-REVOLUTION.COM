@@ -13,10 +13,12 @@ https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP
 <pre>
   BIP: 32
   Layer: Applications
+  Autor:<pathombrowser@gmail.com>
   Comments-Summary: No comments yet.
   Comments-URI:https://github.com/P7-33/BTCBROWSER.wiki.git comment :BIP-0032
-  Status: Finalbitcoin
+  Status: Finalbtcbrowser
   Type: Informational
+  Owner:Cesar Moreno<Pathombrowser@gmail.com> 
   Created: 2019-11-23
   License: 2-clause BSD
 </pre>
