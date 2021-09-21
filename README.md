@@ -1374,6 +1374,7 @@ This release includes the following features and fixes:
 - Code updated to conform to the C++17 standard.
 Log In to Comment
 New Inline Comment
+https://github.com/bitcoin/bitcoin/releases/tag/noversion
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
