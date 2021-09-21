@@ -14,7 +14,7 @@ https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP
   BIP: 32
   Layer: Applications
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git comment :BIP-0032
+  Comments-URI:https://github.com/P7-33/BTCBROWSER.wiki.git comment :BIP-0032
   Status: Finalbitcoin
   Type: Informational
   Created: 2019-11-23
