@@ -40,7 +40,7 @@ This BIP is licensed under the 2-clause BSD license.
 
 ==Motivation==
 
-The Bitcoin Browser reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
+The BtcBrowser reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
 
 Deterministic wallets do not require such frequent backups, and elliptic curve mathematics permit schemes where one can calculate the public keys without revealing the private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).
 
@@ -1027,7 +1027,7 @@ bitcoin browser processes running on the system, so should not be used if any no
 bitcoin browser processes are being run.**
 
 ```bash
-Call  bitcoin browser
+Call  BTCBROWSER
 ```
 
 or
@@ -1176,13 +1176,13 @@ Use the `-v` option for verbose output.
 
 | Lint test | Dependency | Version [used by CI](../ci/lint/04_install.sh) | Installation
 |-----------|:----------:|:-------------------------------------------:|--------------
-| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | `pip3 install flake8==3.8.3`
-| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | `pip3 install mypy==0.781`
-| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
+| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/btcbrowser/bitcoin browser/pull/19348) | `pip3 install flake8==3.8.3`
+| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/btcbrowser/bitcoin browser/pull/19348) | `pip3 install mypy==0.781`
+| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
 | [`lint-shell.sh`](lint/lint-shell.sh) | [yq](https://github.com/kislyuk/yq) | default | `pip3 install yq`
-| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348) | `pip3 install codespell==1.17.1`
+| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install codespell==1.17.1`
 $ python max_money.py
-Total BTC to ever be created: 2099999997690000
+Total BTC seed to ever be created: 2099999997690000
 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
 
 #### Running the tests
@@ -1213,14 +1213,14 @@ Summary: The version bump was not landed with the land bot, so these were missed
 
 Test Plan: Read it.
 
-Reviewed By: #bitcoin browser, 
-bitcoin-BW-bchn/
+Reviewed By: #btcbrowser, 
+bitcoin-BBW-bchn/
  	
 PKGBUILD
-bitcoin-BW-qt-bchn/
+bitcoin-BBW-qt-bchn/
  	
 PKGBUILD
-bitcoin-BW-qt/
+btcbrowser-BBW-qt/
  	
 PKGBUILD
 BTCBROWSER
@@ -1242,7 +1242,7 @@ pkgname=BTCBROWSER
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Bitcoin browser (BBW network) bitcoin-tx, bitcoin-seeder and btcbrowser-cli"
+pkgdesc="Btcbrowser (BBW network) bitcoin-tx, bitcoin-seeder and btcbrowser-cli"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
@@ -1250,8 +1250,8 @@ license=('MIT')
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
 contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
-# Maintainer: <@P7-33BROWSER COIN>
-# Contributor: <@P7-33BROWSER COIN>
+# Maintainer: <@P7-33 <btcbrowser>
+# Contributor: <@P7-33 btcbrowser>
 
 pkgname=BBW-qt-bchn
 pkgver=0.22.8
@@ -1379,7 +1379,7 @@ This release includes the following features and fixes:
 - Code updated to conform to the C++17 standard.
 Log In to Comment
 New Inline Comment
-https://github.com/bitcoin/bitcoin/releases/tag/noversion
+https://github.com/P7-33/BTCBROWSER.wiki.git
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
