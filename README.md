@@ -8,9 +8,12 @@ New coin with the genesis of Bitcoin
 * (30 Apr 2013) Switched from multiplication by I<sub>L</sub> to addition of I<sub>L</sub> (faster, easier implementation)
 * (25 May 2013) Added test vectors
 * (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions.
-* (24 Feb 2017) Added test vectors for hardened derivation with leading zeros
-https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP
+* (24 Feb 2017) Added test vectors for hardened derivation with leadind
+
+https://github.com/P7-33/BTCBROWSER.wiki.git
+
 <pre>
+
   BIP: 32
   Layer: Applications
   Autor:<pathombrowser@gmail.com>
