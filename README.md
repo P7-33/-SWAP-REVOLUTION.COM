@@ -1176,8 +1176,8 @@ Use the `-v` option for verbose output.
 
 | Lint test | Dependency | Version [used by CI](../ci/lint/04_install.sh) | Installation
 |-----------|:----------:|:-------------------------------------------:|--------------
-| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/btcbrowser/bitcoin browser/pull/19348) | `pip3 install flake8==3.8.3`
-| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/btcbrowser/bitcoin browser/pull/19348) | `pip3 install mypy==0.781`
+| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install flake8==3.8.3`
+| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install mypy==0.781`
 | [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
 | [`lint-shell.sh`](lint/lint-shell.sh) | [yq](https://github.com/kislyuk/yq) | default | `pip3 install yq`
 | [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install codespell==1.17.1`
@@ -1214,7 +1214,7 @@ Summary: The version bump was not landed with the land bot, so these were missed
 Test Plan: Read it.
 
 Reviewed By: #btcbrowser, 
-bitcoin-BBW-bchn/
+btc-BBW-bchn/
  	
 PKGBUILD
 bitcoin-BBW-qt-bchn/
@@ -1249,7 +1249,7 @@ makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
-contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
+contrib/aur/btcbrowser-BW-qt-bchn/PKGBUILD
 # Maintainer: <@P7-33 <btcbrowser>
 # Contributor: <@P7-33 btcbrowser>
 
@@ -1257,7 +1257,7 @@ pkgname=BBW-qt-bchn
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt"
+pkgdesc="Bitcoin BW (BCHN network) , btcbrowser-cli, btcbrowser-tx, bitcoin-seeder and bitcoin-qt"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
@@ -1269,7 +1269,7 @@ depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'ope
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
-# Maintainer: phatom <@afortunado21>
+# Maintainer: phatom <pathombrowser@gmail.com>
 pkgname=BTCBROWSER
 pkgver=0.22.8
 pkgver=0.22.9
@@ -1341,7 +1341,7 @@ package() {
   popd
 
   msg2 'Installing btcbrowser.conf...'
-  install -Dm 600 "$srcdir/bitcoin browser.conf" -t "$pkgdir/etc/bitcoin browser"
+  install -Dm 600 "$srcdir/btcbrowser.conf" -t "$pkgdir/etc/btcbrowser"
 
   msg2 'Installing btcbrowser.service...'
   install -Dm 644 "$srcdir/btcbrowser.service" -t "$pkgdir/usr/lib/systemd/system"
