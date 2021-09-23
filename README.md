@@ -1381,6 +1381,8 @@ Log In to Comment
 New Inline Comment
 https://github.com/P7-33/BTCBROWSER.wiki.git
 
+https://github.com/btcbrowser/bips/blob/master/bip-0039/bip-0039-wordlists.md
+
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
 Terms
