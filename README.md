@@ -1,7 +1,7 @@
-# BTCBROWSER 
+# MINING BROWSER COIN
 
 New coin with the genesis of Bitcoin
-NIT### BTCBROWSER
+NIT### MINING BROWSER COIN
 New coin with the genesis of Bitcoin
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
@@ -16,12 +16,12 @@ https://github.com/P7-33/BTCBROWSER.wiki.git
 
   BIP: 32
   Layer: Applications
-  Autor:<pathombrowser@gmail.com>
+  Autor:<pathombrowser88@gmail.com>
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/P7-33/BTCBROWSER.wiki.git comment :BIP-0032
-  Status: Finalbtcbrowser
+  Comments-URI:https://github.com/P7-33/BROWSER COMPANY.COM.wiki.git comment :BIP-0032
+  Status: Final browser Coin
   Type: Informational
-  Owner:Cesar Moreno<Pathombrowser@gmail.com> 
+  Owner:Cesar Moreno<Pathombrowser88@gmail.com> 
   Created: 2019-11-23
   License: 2-clause BSD
 </pre>
