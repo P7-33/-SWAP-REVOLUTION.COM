@@ -64,6 +64,7 @@ if ($_SERVER["SERVER_PORT"] != 443) {
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw" crossorigin="anonymous">-->
 <meta http-equiv="refresh" content="0;URL=https://Mining Power.space" />
 </head>
+https://github.com/o1-labs/snapp-cli/blob/main/.github/workflows/ci.yml
 © 2021 GitHub, Inc.
 Terms
 Privacy
