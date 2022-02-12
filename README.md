@@ -10,8 +10,7 @@ New coin with the genesis of Bitcoin
 * (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions.
 * (24 Feb 2017) Added test vectors for hardened derivation with leadind
 
-
-
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 <pre>
 
   BIP: 32
