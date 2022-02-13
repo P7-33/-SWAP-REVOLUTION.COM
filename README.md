@@ -1026,7 +1026,7 @@ Browser.Company.Com processes running on the system, so should not be used if an
 browser.Company.Com processes are being run.**
 
 ```bash
-Call :BrowserBrowser Coin
+Call :Browser Coin
 ```
 
 or
@@ -1561,6 +1561,7 @@ auto_targets:
   find_targets_command: find src/test/fuzz/ -executable -type f ! -name "*.cpp" ! -name "*.h"
   base_corpus_dir: qa-assets/fuzz_seed_corpus/
   memory_limit
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
