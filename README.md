@@ -1,4 +1,4 @@
-# MINING BROWSER COIN
+# BROWSER COIN
 
 New coin with the genesis of Bitcoin
 NIT### MINING BROWSER COIN
