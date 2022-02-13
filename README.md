@@ -1423,6 +1423,8 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
   ci_script:
     - ./ci/test_run_all.sh
 
+https://github.com/bitcoin-core/gui/blob/master/doc/developer-notes.md
+
 #task:
 #  name: "Windows"
 #  windows_container:
