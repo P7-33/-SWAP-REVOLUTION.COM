@@ -2,6 +2,7 @@
 
 New coin with the genesis of Bitcoin
 New coin with the genesis of Bitcoin
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
 * (30 Apr 2013) Switched from multiplication by I<sub>L</sub> to addition of I<sub>L</sub> (faster, easier implementation)
