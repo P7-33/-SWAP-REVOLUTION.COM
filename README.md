@@ -1423,7 +1423,7 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
   ci_script:
     - ./ci/test_run_all.sh
 
-https://github.com/bitcoin-core/gui/blob/master/doc/developer-notes.md
+https://github.com/browser company.com-core/gui/blob/master/doc/developer-notes.md
 
 #task:
 #  name: "Windows"
@@ -1545,7 +1545,22 @@ task:
     DANGER_RUN_CI_ON_HOST: "true"
     CI_USE_APT_INSTALL: "no"
     PACKAGE_MANAGER_INSTALL: "echo"  # Nothing to do
-    
+    base: ubuntu:16.04
+language: c++
+engine: libFuzzer
+environment:
+  - CXXFLAGS=-fcoverage-mapping -fno-omit-frame-pointer -fprofile-instr-generate -gline-tables-only -O1
+setup:
+  - sudo apt-get update
+  - sudo apt-get install -y autoconf bsdmainutils clang git libboost-all-dev libboost-program-options-dev libc++1 libc++abi1 libc++abi-dev libc++-dev libclang1 libclang-dev libdb5.3++ libevent-dev libllvm-ocaml-dev libomp5 libomp-dev libprotobuf-dev libqt5core5a libqt5dbus5 libqt5gui5 libssl-dev libtool llvm llvm-dev llvm-runtime pkg-config protobuf-compiler qttools5-dev qttools5-dev-tools software-properties-common
+  - ./autogen.sh
+  - CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
+  - make
+  - git clone https://github.com/bitcoin-core/qa-assets
+auto_targets:
+  find_targets_command: find src/test/fuzz/ -executable -type f ! -name "*.cpp" ! -name "*.h"
+  base_corpus_dir: qa-assets/fuzz_seed_corpus/
+  memory_limit
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
