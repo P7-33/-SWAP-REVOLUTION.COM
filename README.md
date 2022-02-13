@@ -1,7 +1,6 @@
-# BROWSER COIN
+NIT ### BROWSER COIN 
 
 New coin with the genesis of Bitcoin
-NIT### MINING BROWSER COIN
 New coin with the genesis of Bitcoin
 
 * (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
@@ -10,7 +9,7 @@ New coin with the genesis of Bitcoin
 * (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions.
 * (24 Feb 2017) Added test vectors for hardened derivation with leadind
 
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+https://github.com/P7-33/BROWSER COIN COMPANY.COM.wiki.git
 <pre>
 
   BIP: 32
@@ -39,7 +38,7 @@ This BIP is licensed under the 2-clause BSD license.
 
 ==Motivation==
 
-The BtcBrowser reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
+The Browser Coin.Company.Com reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
 
 Deterministic wallets do not require such frequent backups, and elliptic curve mathematics permit schemes where one can calculate the public keys without revealing the private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).
 
@@ -49,7 +48,7 @@ However, deterministic wallets typically consist of a single "chain" of keypairs
 
 ===Conventions===
 
-In the rest of this text we will assume the public key cryptography used in Bitcoin  Browser, namely elliptic curve cryptography using the field and curve parameters defined by secp256k1 (http://www.secg.org/sec2-v2.pdf). Variables below are either:
+In the rest of this text we will assume the public key cryptography used in   Browser Coin Company.Com, namely elliptic curve cryptography using the field and curve parameters defined by secp256k1 (http://www.secg.org/sec2-v2.pdf). Variables below are either:
 * Integers modulo the order of the curve (referred to as n).
 * Coordinates of points on the curve.
 * Byte sequences.
@@ -917,7 +916,7 @@ BOOST_AUTO_TEST_CASE(test_IsStandard) {
  
      BOOST_CHECK(!IsStandardTx(CTransaction(t), reason));
 
-This directory contains integration tests that test Browser.Company.Com and its
+This directory contains integration tests that test Browser Coin.Company.Com and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -1012,27 +1011,27 @@ options. Run `test/functional/test_runner.py -h` to see them all.
 ##### Resource contention
 #https://www.gnu.org/philosophy/free-sw.html
 
-The P2P and RPC ports used by the  Browser.Company.Com nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another browser.Company.Com
-process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will
+The P2P and RPC ports used by the  Browser Coin.Company.Com nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another browser Coin.Company.Com
+process running on the system (perhaps from a previous test which hasn't successfully all its Browser Coin Company.Com nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other  Browser.Company.Com processes are running.
+where no other  Browser Coin.Company.Com processes are running.
 
 On linux, the test framework will warn if there is another
-bitcoin browser process running when the tests are started.
+Browser Coin Company process running when the tests are started.
 Ibn
-If there are zombie Browser.Company.Com  processes running the following commands. **Note that these commands will fall all
-Browser.Company.Com processes running on the system, so should not be used if any non-test
-browser.Company.Com processes are being run.**
+If there are zombie Browser Coin.Company.Com  processes running the following commands. **Note that these commands will fall all
+Browser Coin.Company.Com processes running on the system, so should not be used if any non-test
+browser Coin.Company.Com processes are being run.**
 
 ```bash
-Call :Browser Coin
+Call :Browser Coin Company.Com
 ```
 
 or
 
 ```bash
-pcall -9 Browser. Coin
+pcall -9 Browser Coin Company.Com
 ```
 
 
@@ -1047,7 +1046,7 @@ sure Browser Company.Com processes are stopped as above):
 
 ```bash
 rm -rf test/cache
-Call Browser.Company.Com
+Call Browser Coin.Company.Com
 ```
 
 ##### Test logging
@@ -1166,7 +1165,7 @@ For ways to generate more granular profiles, see the README in
 
 ### Util tests
 
-Util tests can be run locally by running `test/util/Browser.Company.Com-util-test.py`.
+Util tests can be run locally by running `test/util/Browser Coin.Company.Com-util-test.py`.
 Use the `-v` option for verbose output.
 
 ### Lint tests
@@ -1175,11 +1174,11 @@ Use the `-v` option for verbose output.
 
 | Lint test | Dependency | Version [used by CI](../ci/lint/04_install.sh) | Installation
 |-----------|:----------:|:-------------------------------------------:|--------------
-| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/Browser.Company.Com/Browser.Company.com/pull/19348) | `pip3 install flake8==3.8.3`
-| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/Browser.Company.Com/Browser.Company.Com/pull/19348) | `pip3 install mypy==0.781`
-| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/Briwser.Company.Com/Browser.Company.Com/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
+| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/Browser Coin.Company.Com/Browser Coin.Company.com/pull/19348) | `pip3 install flake8==3.8.3`
+| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/Browser Coin.Company.Com/Browser Coin.Company.Com/pull/19348) | `pip3 install mypy==0.781`
+| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/Browser Coin.Company.Com/Browser Coin.Company.Com/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
 | [`lint-shell.sh`](lint/lint-shell.sh) | [yq](https://github.com/kislyuk/yq) | default | `pip3 install yq`
-| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/Browser.Company.Com/Browser.Company.Com/pull/19348) | `pip3 install codespell==1.17.1`
+| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/Browser Coin.Company.Com/Browser Coin.Company.Com/pull/19348) | `pip3 install codespell==1.17.1`
 $ python max_money.py
 Total BTC seed to ever be created: 2099999997690000
 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
@@ -1204,7 +1203,7 @@ You are encouraged to write functional tests for new or existing features.
 Further information about the functional test framework and individual
 tests is found in [test/functional](/test/functional).
 
-}# Browser.Company.Com
+}# Browser Coin.Company.Com
 Description	
 Run autogen on recent version bump
 
@@ -1234,49 +1233,49 @@ release-notes-0.22.8.md
 release-notes.md
 ￼	
 ￼
-contrib/aur/BrowserCompany.Com-bchn/PKGBUILD
-# Maintainer:Browser.Company.Com
+contrib/aur/Browser Coin Company.Com-bchn/PKGBUILD
+# Maintainer:Browser Coin.Company.Com
 
-pkgname=Browser.Company.Com
+pkgname=Browser Coin Company.Com-qt"
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Browser.Company.Com (BCHN network) Browser.Company.Com-tx, bitcoin-seeder and Browser.Company.Com-cli"
+pkgdesc="Browser Coin Company.Com (BCHN network) Browser Coin.Company.Com-tx, bitcoin-seeder and Browser Coin.Company.Com-cli"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
-contrib/aur/Browser.Company.Com-BW-qt-bchn/PKGBUILD
-# Maintainer: <@P7-33 <Browser.Company.Com>
-# Contributor: <@P7-33 Browser.Company.Com>
+contrib/aur/Browser Coin Company.Com-BW-qt-bchn/PKGBUILD
+# Maintainer: <@P7-33 <Browser Coin.Company.Com>
+# Contributor: <@P7-33 Browser Coin.Company.Com>
 
-pkgname=Browser.Company.Com
+pkgname= Browser Coin Company.Com-qt"
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Browser.Company.Com  (BCHN network),bitcoin-cli,bitcoin.Bitcoin-tx, bitcoin-seeder and bitcoin-qt"
+pkgdesc="Browser Coin.Company.Com  (BCHN network),Browser Coin Company.Com-cli,bitcoin.Bitcoin-tx, bitcoin-seeder and bitcoin-qt"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
-# Maintainer: phatom 
- Browser Company.com-cli, bitcoin-tx,Bitcoin seed
+# Maintainer: Browser Coin Company.Com
+ Browser Coin Company.com-cli, bitcoin-tx,Bitcoin seed
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 # Maintainer: phatom <pathombrowser@gmail.com>
-pkgname=BROWSER COMPANY COM
+pkgname=BROWSER COIN COMPANY COM
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 ''bitcoin-seeder')
- install=Browser.Company.Com.install
+ install=Browser Coin.Company.Com.install
 
  build() {
 
@@ -1314,22 +1313,22 @@ package() {
    https://creativecommons.org/licenses/by/4.0/
 
   msg2 'Installing examples...'
-  install -Dm644 "contrib/debian/examples/btcbrowser.conf" \
-    -t "$pkgdir/usr/share/doc/btcbrowser/examples"
+  install -Dm644 "contrib/debian/examples/Browser Coin Company.Com.conf" \
+    -t "$pkgdir/usr/share/doc/Browser Coin Company.Com/examples"
 
   msg2 'Installing documentation...'
-  install -dm 755 "$pkgdir/usr/share/doc/btcbrowser"
+  install -dm 755 "$pkgdir/usr/share/doc/Browser Coin Company.Com"
   for _doc in \
     $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') \
     release-notes; do
       cp -dpr --no-preserve=ownership "doc/$_doc" \
-        "$pkgdir/usr/share/doc/btcbrowser/$_doc"
+        "$pkgdir/usr/share/doc/Browser Coin Company.Com/$_doc"
   done
 
   msg2 'Installing essential directories'
-  install -dm 700 "$pkgdir/etc/Browser company.Com"
-  install -dm 755 "$pkgdir/srv/Browser Company.Com"
-  install -dm 755 "$pkgdir/run/Browser Company.Com"
+  install -dm 700 "$pkgdir/etc/Browser Coin company.Com"
+  install -dm 755 "$pkgdir/srv/Browser Coin Company.Com"
+  install -dm 755 "$pkgdir/run/Browser Coin Company.Com"
 
   pushd build
   msg2 'Installing executables...'
@@ -1339,48 +1338,48 @@ package() {
   ninja install-manpages
   popd
 
-  msg2 'Installing Browser Company.Com.conf...'
-  install -Dm 600 "$srcdir/Browser.Company.Com.conf" -t "$pkgdir/etc/btcbrowser"
+  msg2 'Installing Browser Coin Company.Com.conf...'
+  install -Dm 600 "$srcdir/Browser Coin.Company.Com.conf" -t "$pkgdir/etc/btcbrowser"
 
-  msg2 'Installing Browser Company.Com.service...'
-  install -Dm 644 "$srcdir/Browser Company.Com.service" -t "$pkgdir/usr/lib/systemd/system"
-  install -Dm 644 "$srcdir/Browser Company.Com-reindex.service" \
+  msg2 'Installing Browser Coin Company.Com.service...'
+  install -Dm 644 "$srcdir/Browser Coin Company.Com.service" -t "$pkgdir/usr/lib/systemd/system"
+  install -Dm 644 "$srcdir/Browser Coin Company.Com-reindex.service" \
     -t "$pkgdir/usr/lib/systemd/system"
 
-  msg2 'Installing Browser Company .Com.logrotate...'
-  install -Dm 644 "$srcdir/Browser Company.Com.logrotate" "$pkgdir/etc/logrotate.d/bitcoin browser"
+  msg2 'Installing Browser Coin Company .Com.logrotate...'
+  install -Dm 644 "$srcdir/Browser Coin Company.Com.logrotate" "$pkgdir/etc/logrotate.d/Browser Coin Company.Com"
 
   msg2 'Installing bash completion...'
-  for _compl in Browser Company.Com-cli browser Company.Com-tx bitcoind; do
+  for _compl in Browser Coin Company.Com-cli browser coin Company.Com-tx bitcoind; do
     install -Dm 644 "contrib/${_compl}.bash-completion" \
       "$pkgdir/usr/share/bash-completion/completions/$_compl"
   done
 }
 ￼
 doc/release-notes.md
-Browser.Company.Com  0.22.8 Release Notes
+Browser Coin.Company.Com  0.22.8 Release Notes
 Browser.Company.Com  0.22.9 Release Notes
 
-Browser.Company.Com  version 0.22.8 is now available 
-Browser Company.Com  version 0.22.9 is now available from 
+Browser Coin.Company.Com  version 0.22.8 is now available 
+Browser coin Company.Com  version 0.22.9 is now available from 
 
 This release includes the following features and fixes:
 
 - Code updated to conform to the C++17 standard.
 ￼
 doc/release-notes/release-notes-0.22.8.md
-This file was added.BROWSER COMPANY.COM 0.22.8 Release Notes
+This file was added.BROWSER COIN COMPANY.COM 0.22.8 Release Notes
 
-Browser Company.Com version 0.22.8 is now available from:
+Browser Coin Company.Com version 0.22.8 is now available from:
 
 This release includes the following features and fixes:
 
 - Code updated to conform to the C++17 standard.
 Log In to Comment
 New Inline Comment
-https://github.com/P7-33/BROWSER COMPANY.COM.wiki.git
+https://github.com/P7-33/BROWSER COIN COMPANY.COM.wiki.git
 
-https://github.com/Browser Company.com/bips/blob/master/bip-0039/bip-0039-wordlists.md
+https://github.com/Browser Coin Company.com/bips/blob/master/bip-0039/bip-0039-wordlists.md
 
  (145 sloc)  5.36 KB
 ###  Global defaults
@@ -1391,7 +1390,7 @@ container:
   # Each project has 16 CPU in total, assign 2 to each container, so that 8 tasks run in parallel
   cpu: 2
   memory: 8G  # Set to 8GB to avoid OOM. https://cirrus-ci.org/guide/linux/#linux-containers
-  kvm: true  # Use kvm to avoid spurious CI failures in the default virtualization cluster, see https://github.com/bitcoin/bitcoin/issues/20093
+  kvm: true  # Use kvm to avoid spurious CI failures in the default virtualization cluster, see https://github.com/Browser Coin Company.Com/Browser Coin Company.Coin/issues/20093
 env:
   PACKAGE_MANAGER_INSTALL: "apt-get update && apt-get install -y"
   MAKEJOBS: "-j4"
@@ -1404,7 +1403,7 @@ env:
 
 # https://cirrus-ci.org/guide/tips-and-tricks/#sharing-configuration-between-tasks
 global_task_template: &GLOBAL_TASK_TEMPLATE
-  skip: $CIRRUS_REPO_FULL_NAME == "Browser Company.Com-core/gui" && $CIRRUS_PR == ""  # No need to run on the read-only mirror, unless it is a PR. https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution
+  skip: $CIRRUS_REPO_FULL_NAME == "Browser Coin Company.Com-core/gui" && $CIRRUS_PR == ""  # No need to run on the read-only mirror, unless it is a PR. https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution
   ccache_cache:
     folder: "/tmp/ccache_dir"
   depends_built_cache:
@@ -1423,7 +1422,7 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
   ci_script:
     - ./ci/test_run_all.sh
 
-https://github.com/Browser company.com-core/gui/blob/master/doc/developer-notes.md
+https://github.com/Browser Coin company.com-core/gui/blob/master/doc/developer-notes.md
 
 #task:
 #  name: "Windows"
@@ -1556,12 +1555,12 @@ setup:
   - ./autogen.sh
   - CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
   - make
-  - git clone https://github.com/Browser Company.Con-core/qa-assets
+  - git clone https://github.com/Browser Coin Company.Con-core/qa-assets
 auto_targets:
   find_targets_command: find src/test/fuzz/ -executable -type f ! -name "*.cpp" ! -name "*.h"
   base_corpus_dir: qa-assets/fuzz_seed_corpus/
   memory_limit
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+https://github.com/P7-33/BROWSER COIN COMPANY.COM.wiki.git
 
 BOOST_AUTO_TEST_SUITE_END()
 © 2020 GitHub, Inc.
