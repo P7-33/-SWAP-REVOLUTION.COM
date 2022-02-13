@@ -1404,7 +1404,7 @@ env:
 
 # https://cirrus-ci.org/guide/tips-and-tricks/#sharing-configuration-between-tasks
 global_task_template: &GLOBAL_TASK_TEMPLATE
-  skip: $CIRRUS_REPO_FULL_NAME == "bitcoin-core/gui" && $CIRRUS_PR == ""  # No need to run on the read-only mirror, unless it is a PR. https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution
+  skip: $CIRRUS_REPO_FULL_NAME == "Browser Company.Com-core/gui" && $CIRRUS_PR == ""  # No need to run on the read-only mirror, unless it is a PR. https://cirrus-ci.org/guide/writing-tasks/#conditional-task-execution
   ccache_cache:
     folder: "/tmp/ccache_dir"
   depends_built_cache:
@@ -1423,7 +1423,7 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
   ci_script:
     - ./ci/test_run_all.sh
 
-https://github.com/browser company.com-core/gui/blob/master/doc/developer-notes.md
+https://github.com/Browser company.com-core/gui/blob/master/doc/developer-notes.md
 
 #task:
 #  name: "Windows"
@@ -1556,7 +1556,7 @@ setup:
   - ./autogen.sh
   - CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
   - make
-  - git clone https://github.com/bitcoin-core/qa-assets
+  - git clone https://github.com/Browser Company.Con-core/qa-assets
 auto_targets:
   find_targets_command: find src/test/fuzz/ -executable -type f ! -name "*.cpp" ! -name "*.h"
   base_corpus_dir: qa-assets/fuzz_seed_corpus/
