@@ -1026,13 +1026,13 @@ Browser.Company.Com processes running on the system, so should not be used if an
 browser.Company.Com processes are being run.**
 
 ```bash
-Call :Briwser.Company.Com
+Call :BrowserBrowser Coin
 ```
 
 or
 
 ```bash
-pcall -9 Browser.Company.Com
+pcall -9 Browser. Coin
 ```
 
 
@@ -1043,7 +1043,7 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure bitcoin browser processes are stopped as above):
+sure Browser Company.Com processes are stopped as above):
 
 ```bash
 rm -rf test/cache
@@ -1129,7 +1129,7 @@ test run:
 Use the path to find the pid file in the temp folder:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/bitcoin browser.pid
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/Browser Company.Com.pid
 ```
 
 Then you can use the pid to start `gdb`:
@@ -1213,10 +1213,10 @@ Summary: The version bump was not landed with the land bot, so these were missed
 Test Plan: Read it.
 
 Reviewed By: #Browser.Company.Com, 
-btc-BW-bchn/
+Browser Company.Com-BW-bchn/
  	
 PKGBUILD
-bitcoin-BW-qt-bchn/
+Browser Company.Com-BW-qt-bchn/
  	
 PKGBUILD
 Browser.Company.Com-BW-qt/
