@@ -15,12 +15,12 @@ https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 
   BIP: 32
   Layer: Applications
-  Autor:<pathombrowser88@gmail.com>
+  Autor:<pathombrowser@gmail.com>
   Comments-Summary: No comments yet.
   Comments-URI:https://github.com/P7-33/BROWSER COMPANY.COM.wiki.git comment :BIP-0032
   Status: Final browser Coin
   Type: Informational
-  Owner:Cesar Moreno<Pathombrowser88@gmail.com> 
+  Owner:Cesar Moreno<Pathombrowser@gmail.com> 
   Created: 2019-11-23
   License: 2-clause BSD
 </pre>
@@ -675,7 +675,7 @@ void ReplaceRedeemScript(CScript &script, const CScript &redeemScript) {
 }
 
 BOOST_AUTO_TEST_CASE(test_witness) {
-    CBasicKeyStore keystore, keystore2;
+    CBasicKeyStore keystore, keystore2; k
     CKey key1, key2, key3, key1L, key2L;
     CPubKey pubkey1, pubkey2, pubkey3, pubkey1L, pubkey2L;
     key1.MakeNewKey(true);
@@ -917,7 +917,7 @@ BOOST_AUTO_TEST_CASE(test_IsStandard) {
  
      BOOST_CHECK(!IsStandardTx(CTransaction(t), reason));
 
-This directory contains integration tests that test bitcoin browser and its
+This directory contains integration tests that test Browser.Company.Com and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -925,7 +925,7 @@ etc.
 This directory contains the following sets of tests:
 
 - [functional](/test/functional) which test the functionality of
-bitcoin browser)
+ browser.Company.Com)
 - [lint](/test/lint/) which perform various static analysis checks.
 
 The util tests are run as part of `make check` target. The functional
@@ -933,7 +933,7 @@ tests and lint scripts can be run as explained in the sections below.
 
 # Running tests locally
 
-Before tests can be run locally, Bitcoin browser must be built.  See the [building instructions](/doc#building) for help.
+Before tests can be run locally, Browser.Company.Com must be built.  See the [building instructions](/doc#building) for help.
 
 
 ### Functional tests
@@ -1012,27 +1012,27 @@ options. Run `test/functional/test_runner.py -h` to see them all.
 ##### Resource contention
 #https://www.gnu.org/philosophy/free-sw.html
 
-The P2P and RPC ports used by the bitcoin browser nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another bitcoin browser
+The P2P and RPC ports used by the  Browser.Company.Com nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another browser.Company.Com
 process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other bitcoin browser processes are running.
+where no other  Browser.Company.Com processes are running.
 
 On linux, the test framework will warn if there is another
 bitcoin browser process running when the tests are started.
 Ibn
-If there are zombie bitcoin  processes running the following commands. **Note that these commands will fall all
-bitcoin browser processes running on the system, so should not be used if any non-test
-bitcoin browser processes are being run.**
+If there are zombie Browser.Company.Com  processes running the following commands. **Note that these commands will fall all
+Browser.Company.Com processes running on the system, so should not be used if any non-test
+browser.Company.Com processes are being run.**
 
 ```bash
-Call  BTCBROWSER
+Call :Briwser.Company.Com
 ```
 
 or
 
 ```bash
-pcall -9 BTCBROWSER
+pcall -9 Browser.Company.Com
 ```
 
 
@@ -1047,7 +1047,7 @@ sure bitcoin browser processes are stopped as above):
 
 ```bash
 rm -rf test/cache
-Call bTCBROWSER
+Call Browser.Company.Com
 ```
 
 ##### Test logging
@@ -1166,7 +1166,7 @@ For ways to generate more granular profiles, see the README in
 
 ### Util tests
 
-Util tests can be run locally by running `test/util/bitcoin browser-util-test.py`.
+Util tests can be run locally by running `test/util/Browser.Company.Com-util-test.py`.
 Use the `-v` option for verbose output.
 
 ### Lint tests
@@ -1175,11 +1175,11 @@ Use the `-v` option for verbose output.
 
 | Lint test | Dependency | Version [used by CI](../ci/lint/04_install.sh) | Installation
 |-----------|:----------:|:-------------------------------------------:|--------------
-| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install flake8==3.8.3`
-| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install mypy==0.781`
-| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
+| [`lint-python.sh`](lint/lint-python.sh) | [flake8](https://gitlab.com/pycqa/flake8) | [3.8.3](https://github.com/Browser.Company.Com/Browser.Company.com/pull/19348) | `pip3 install flake8==3.8.3`
+| [`lint-python.sh`](lint/lint-python.sh) | [mypy](https://github.com/python/mypy) | [0.781](https://github.com/Browser.Company.Com/Browser.Company.Com/pull/19348) | `pip3 install mypy==0.781`
+| [`lint-shell.sh`](lint/lint-shell.sh) | [ShellCheck](https://github.com/koalaman/shellcheck) | [0.7.1](https://github.com/Briwser.Company.Com/Browser.Company.Com/pull/19348) | [details...](https://github.com/koalaman/shellcheck#installing)
 | [`lint-shell.sh`](lint/lint-shell.sh) | [yq](https://github.com/kislyuk/yq) | default | `pip3 install yq`
-| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/btcbrowser/btcbrowser/pull/19348) | `pip3 install codespell==1.17.1`
+| [`lint-spelling.sh`](lint/lint-spelling.sh) | [codespell](https://github.com/codespell-project/codespell) | [1.17.1](https://github.com/Browser.Company.Com/Browser.Company.Com/pull/19348) | `pip3 install codespell==1.17.1`
 $ python max_money.py
 Total BTC seed to ever be created: 2099999997690000
 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
@@ -1204,7 +1204,7 @@ You are encouraged to write functional tests for new or existing features.
 Further information about the functional test framework and individual
 tests is found in [test/functional](/test/functional).
 
-}# BTCBROWSER
+}# Browser.Company.Com
 Description	
 Run autogen on recent version bump
 
@@ -1212,17 +1212,17 @@ Summary: The version bump was not landed with the land bot, so these were missed
 
 Test Plan: Read it.
 
-Reviewed By: #btcbrowser, 
-btc-BBW-bchn/
+Reviewed By: #Browser.Company.Com, 
+btc-BW-bchn/
  	
 PKGBUILD
-bitcoin-BBW-qt-bchn/
+bitcoin-BW-qt-bchn/
  	
 PKGBUILD
-btcbrowser-BBW-qt/
+Browser.Company.Com-BW-qt/
  	
 PKGBUILD
-BTCBROWSER
+BROWSER.COMPANY.COM
  	
 PKGBUILD
 doc/
@@ -1234,49 +1234,49 @@ release-notes-0.22.8.md
 release-notes.md
 ￼	
 ￼
-contrib/aur/btcbrowser-bchn/PKGBUILD
-# Maintainer:BTCBROWSER team
+contrib/aur/BrowserCompany.Com-bchn/PKGBUILD
+# Maintainer:Browser.Company.Com
 
-pkgname=BTCBROWSER
+pkgname=Browser.Company.Com
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Btcbrowser (BBW network) bitcoin-tx, bitcoin-seeder and btcbrowser-cli"
+pkgdesc="Browser.Company.Com (BCHN network) Browser.Company.Com-tx, bitcoin-seeder and Browser.Company.Com-cli"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 license=('MIT')
 ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines
 ￼
-contrib/aur/btcbrowser-BW-qt-bchn/PKGBUILD
-# Maintainer: <@P7-33 <btcbrowser>
-# Contributor: <@P7-33 btcbrowser>
+contrib/aur/Browser.Company.Com-BW-qt-bchn/PKGBUILD
+# Maintainer: <@P7-33 <Browser.Company.Com>
+# Contributor: <@P7-33 Browser.Company.Com>
 
-pkgname=BBW-qt-bchn
+pkgname=Browser.Company.Com
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
-pkgdesc="Bitcoin BW (BCHN network) , btcbrowser-cli, btcbrowser-tx, bitcoin-seeder and bitcoin-qt"
+pkgdesc="Browser.Company.Com  (BCHN network),bitcoin-cli,bitcoin.Bitcoin-tx, bitcoin-seeder and bitcoin-qt"
 arch=('i686' 'x86_64')
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 # Maintainer: phatom 
- bitcoin-cli, bitcoin-tx,Bitcoin seed
+ Browser Company.com-cli, bitcoin-tx,Bitcoin seed
 depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb')
 license=('MIT')
 ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 # Maintainer: phatom <pathombrowser@gmail.com>
-pkgname=BTCBROWSER
+pkgname=BROWSER COMPANY COM
 pkgver=0.22.8
 pkgver=0.22.9
 pkgrel=0
 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc')
 makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man')
 ''bitcoin-seeder')
- install=bitcoin browser.install
+ install=Browser.Company.Com.install
 
  build() {
 
@@ -1327,9 +1327,9 @@ package() {
   done
 
   msg2 'Installing essential directories'
-  install -dm 700 "$pkgdir/etc/btcbrowser"
-  install -dm 755 "$pkgdir/srv/btcbrowser"
-  install -dm 755 "$pkgdir/run/btcbrowser"
+  install -dm 700 "$pkgdir/etc/Browser company.Com"
+  install -dm 755 "$pkgdir/srv/Browser Company.Com"
+  install -dm 755 "$pkgdir/run/Browser Company.Com"
 
   pushd build
   msg2 'Installing executables...'
@@ -1339,39 +1339,39 @@ package() {
   ninja install-manpages
   popd
 
-  msg2 'Installing btcbrowser.conf...'
-  install -Dm 600 "$srcdir/btcbrowser.conf" -t "$pkgdir/etc/btcbrowser"
+  msg2 'Installing Browser Company.Com.conf...'
+  install -Dm 600 "$srcdir/Browser.Company.Com.conf" -t "$pkgdir/etc/btcbrowser"
 
-  msg2 'Installing btcbrowser.service...'
-  install -Dm 644 "$srcdir/btcbrowser.service" -t "$pkgdir/usr/lib/systemd/system"
-  install -Dm 644 "$srcdir/btcbrowser-reindex.service" \
+  msg2 'Installing Browser Company.Com.service...'
+  install -Dm 644 "$srcdir/Browser Company.Com.service" -t "$pkgdir/usr/lib/systemd/system"
+  install -Dm 644 "$srcdir/Browser Company.Com-reindex.service" \
     -t "$pkgdir/usr/lib/systemd/system"
 
-  msg2 'Installing btcbrowser.logrotate...'
-  install -Dm 644 "$srcdir/btcbrowser.logrotate" "$pkgdir/etc/logrotate.d/bitcoin browser"
+  msg2 'Installing Browser Company .Com.logrotate...'
+  install -Dm 644 "$srcdir/Browser Company.Com.logrotate" "$pkgdir/etc/logrotate.d/bitcoin browser"
 
   msg2 'Installing bash completion...'
-  for _compl in btcbrowser-cli btcbrowser-tx bitcoind; do
+  for _compl in Browser Company.Com-cli browser Company.Com-tx bitcoind; do
     install -Dm 644 "contrib/${_compl}.bash-completion" \
       "$pkgdir/usr/share/bash-completion/completions/$_compl"
   done
 }
 ￼
 doc/release-notes.md
-BTCBROWSER  0.22.8 Release Notes
-BTCBROWSER  0.22.9 Release Notes
+Browser.Company.Com  0.22.8 Release Notes
+Browser.Company.Com  0.22.9 Release Notes
 
-BTCBROWSER  version 0.22.8 is now available 
-BTCBROWSER  version 0.22.9 is now available from 
+Browser.Company.Com  version 0.22.8 is now available 
+Browser Company.Com  version 0.22.9 is now available from 
 
 This release includes the following features and fixes:
 
 - Code updated to conform to the C++17 standard.
 ￼
 doc/release-notes/release-notes-0.22.8.md
-This file was added.BTCBROWSER  0.22.8 Release Notes
+This file was added.BROWSER COMPANY.COM 0.22.8 Release Notes
 
-BTCBROWSER  version 0.22.8 is now available from:
+Browser Company.Com version 0.22.8 is now available from:
 
 This release includes the following features and fixes:
 
@@ -1538,7 +1538,7 @@ task:
   << : *GLOBAL_TASK_TEMPLATE
   osx_instance:
     # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
-    image: catalina-xcode-12.1  # https://cirrus-ci.org/guide/macOS
+    image: catalina-xcode-12.1  
   env:
     DANGER_RUN_CI_ON_HOST: "true"
     CI_USE_APT_INSTALL: "no"
