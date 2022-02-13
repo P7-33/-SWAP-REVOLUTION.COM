@@ -1,4 +1,4 @@
- (145 sloc)  5.36 KB
+
 ###  Global defaults
 
 timeout_in: 120m  # https://cirrus-ci.org/faq/#instance-timed-out
