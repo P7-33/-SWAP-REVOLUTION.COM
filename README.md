@@ -1,7 +1,7 @@
 # BITCOIN-BROWSER
 New coin with the genesis of Bitcoin
 README.md
-NI# BITCOIN-BROWSER https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git New coin with the genesis of Bitcoin
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitNew coin with the genesis of Bitcoin
 
 (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
 (30 Apr 2013) Switched from multiplication by IL to addition of IL (faster, easier implementation)
