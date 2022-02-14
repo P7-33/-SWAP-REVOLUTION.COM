@@ -11,7 +11,7 @@ https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitNew coin with the genesis o
   BIP: 32
   Layer: Applications
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git comment :BIP-0032
+  Comments-URI:https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitcomment :BIP-0032
   Status: Finalbitcoin
   Type: Informational
   Created: 2019-11-23
@@ -30,7 +30,7 @@ This BIP is licensed under the 2-clause BSD license.
 
 ==Motivation==
 
-The Bitcoin Browser reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
+The Browser Company.Com reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
 
 Deterministic wallets do not require such frequent backups, and elliptic curve mathematics permit schemes where one can calculate the public keys without revealing the private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).
 
@@ -40,7 +40,7 @@ However, deterministic wallets typically consist of a single "chain" of keypairs
 
 ===Conventions===
 
-In the rest of this text we will assume the public key cryptography used in Bitcoin Browser, namely elliptic curve cryptography using the field and curve parameters defined by secp256k1 (http://www.secg.org/sec2-v2.pdf). Variables below are either:
+In the rest of this text we will assume the public key cryptography used in Browser Company.Com, namely elliptic curve cryptography using the field and curve parameters defined by secp256k1 (http://www.secg.org/sec2-v2.pdf). Variables below are either:
 
 Integers modulo the order of the curve (referred to as n).
 Coordinates of points on the curve.
@@ -227,7 +227,7 @@ Seed (hex): 4b381541583be4423346c643850da4b320e46a87ae3d2a4e6da11eba819cd4acba45
 
 Chain m ** ext pub: bc1qpdgwszwq0zpjms9pt9kt4fqlt6n47e0dqfuq5s ** ext prv: bc1qmm2vkya2mgjphxnwa7v6tqtqhphlt9sd8esmgs
 Chain m/0H ** ext pub: bc1qfsxhzan5ltkux5540herzf50jcqx9hyygkpn2p ** ext prv: bc1qpm7dndnx0ckhkcpfasxr0a3hqe5x5l290sx3tr
-#include "data/tx_invalid.json.h" #include "data/tx_valid.json.h" #include "test/test_bitcoin.h"
+#include "data/tx_invalid.json.h" #include "data/tx_valid.json.h" #include "test/test_Browser Company.Com.h"
 
 #include "clientversion.h" #include "consensus/validation.h" #include "core_io.h" #include "key.h" #include "keystore.h" #include "policy/policy.h" #include "script/script.h" #include "script/script_error.h" #include "script/sign.h" #include "script/standard.h" #include "test/scriptflags.h" #include "utilstrencodings.h" #include "validation.h" // For CheckRegularTransaction
 
@@ -688,16 +688,16 @@ t.vout[0].scriptPubKey = CScript() << OP_RETURN;
 t.vout[1].scriptPubKey = CScript() << OP_RETURN;
 
  BOOST_CHECK(!IsStandardTx(CTransaction(t), reason));
-This directory contains integration tests that test bitcoin browser and its utilities in their entirety. It does not contain unit tests, which can be found in /src/test, /src/wallet/test, etc.
+This directory contains integration tests that test Browser Company.Com and its utilities in their entirety. It does not contain unit tests, which can be found in /src/test, /src/wallet/test, etc.
 
 This directory contains the following sets of tests:
 
-functional which test the functionality of bitcoin browser)
+functional which test the functionality of Browser Company.Com)
 lint which perform various static analysis checks.
 The util tests are run as part of make check target. The functional tests and lint scripts can be run as explained in the sections below.
 
 Running tests locally
-Before tests can be run locally, Bitcoin browser must be built. See the building instructions for help.
+Before tests can be run locally, Browser Company.Com must be built. See the building instructions for help.
 
 Functional tests
 Dependencies
@@ -741,19 +741,19 @@ Troubleshooting and debugging test failures
 Resource contention
 #https://www.gnu.org/philosophy/free-sw.html
 
-The P2P and RPC ports used by the bitcoin browser nodes-under-test are chosen to make conflicts with other processes unlikely. However, if there is another bitcoin browser process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will cause the test to fail. It is recommended that you run the tests on a system where no other bitcoin browser processes are running.
+The P2P and RPC ports used by the Browser Company.Com nodes-under-test are chosen to make conflicts with other processes unlikely. However, if there is another Browser Company.Com process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will cause the test to fail. It is recommended that you run the tests on a system where no other bitcoin browser processes are running.
 
-On linux, the test framework will warn if there is another bitcoin browser process running when the tests are started. Ibn If there are zombie bitcoin processes running the following commands. Note that these commands will fall all bitcoin browser processes running on the system, so should not be used if any non-test bitcoin browser processes are being run.
+On linux, the test framework will warn if there is another Browser Company.Com process running when the tests are started. Ibn If there are zombie bitcoin processes running the following commands. Note that these commands will fall all Browser Company.Com processes running on the system, so should not be used if any non-test Browser Company.Com processes are being run.
 
-Call  bitcoin browser
+Call  Browser Company.Com
 or
 
-pcall -9 bitcoin browser
+pcall -9 Browser Company.Com
 Data directory cache
 A pre-mined blockchain with 200 blocks is generated the first time a functional test is run and is stored in test/cache. This speeds up test startup times since new blockchains don't need to be generated for each test. However, the cache may get into a bad state, in which case tests will fail. If this happens, remove the cache directory (and make sure bitcoin browser processes are stopped as above):
 
 rm -rf test/cache
-Call bitcoin browser
+Call Browser Company.Com
 Test logging
 The tests contain logging at five different levels (DEBUG, INFO, WARNING, ERROR and CRITICAL). From within your functional tests you can log to these different levels using the logger included in the test_framework, e.g. self.log.debug(object). By default:
 
@@ -813,16 +813,16 @@ perf report -i /path/to/datadir/send-big-msgs.perf.data.xxxx --stdio | c++filt |
 For ways to generate more granular profiles, see the README in test/functional.
 
 Util tests
-Util tests can be run locally by running test/util/bitcoin browser-util-test.py. Use the -v option for verbose output.
+Util tests can be run locally by running test/util/Browser Company.Com-util-test.py. Use the -v option for verbose output.
 
 Lint tests
 Dependencies
 Lint test	Dependency	Version used by CI	Installation
-lint-python.sh	flake8	[3.8.3](https://github.com/bitcoin browser/bitcoin browser/pull/19348)	pip3 install flake8==3.8.3
-lint-python.sh	mypy	[0.781](https://github.com/bitcoin browser/bitcoin browser/pull/19348)	pip3 install mypy==0.781
-lint-shell.sh	ShellCheck	[0.7.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348)	details...
+lint-python.sh	flake8	[3.8.3](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348)	pip3 install flake8==3.8.3
+lint-python.sh	mypy	[0.781](https://github.com/browser/Browser Company.Com/pull/19348)	pip3 install mypy==0.781
+lint-shell.sh	ShellCheck	[0.7.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348)	details...
 lint-shell.sh	yq	default	pip3 install yq
-lint-spelling.sh	codespell	[1.17.1](https://github.com/bitcoin browser/bitcoin browser/pull/19348)	pip3 install codespell==1.17.1
+lint-spelling.sh	codespell	[1.17.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348)	pip3 install codespell==1.17.1
 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
 
 Running the tests
@@ -835,39 +835,39 @@ test/lint/lint-all.sh
 Writing functional tests
 You are encouraged to write functional tests for new or existing features. Further information about the functional test framework and individual tests is found in test/functional.
 
-}# BITCOIN BROWSER Description Run autogen on recent version bump
+}# BROWSER CCOMPANY.COM Description Run autogen on recent version bump
 
 Summary: The version bump was not landed with the land bot, so these were missed.
 
 Test Plan: Read it.
 
-Reviewed By: #bitcoin browser, bitcoin-BW-bchn/
+Reviewed By: #Browser Company.Com,Browser Company.Com bil-BW-bchn/
 
-PKGBUILD bitcoin-BW-qt-bchn/
+PKGBUILD Browser Company.Com-BW-qt-bchn/
 
-PKGBUILD bitcoin-BW-qt/
+PKGBUILD Browser Company.Com-BW-qt/
 
-PKGBUILD bitcoin-BW/
+PKGBUILD Browser Company.Com-BW/
 
 PKGBUILD doc/
 
 release-notes.md release-notes/
 
-release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/bitcoin browser-bchn/PKGBUILD
+release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Browser Company.Com-bchn/PKGBUILD
 
-Maintainer: pathom <@afortunado 21>
-Contributor: pathom <@afortunado21>
+Maintainer: pathombrowser <@afortunado 21>
+Contributor: pathombrowser <@afortunado21>
 pkgname=bitcoin Browser pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
 
-Maintainer: pathom <afortunado 21>
-Contributor: Pathom<afortunad 21>
-pkgname=bitcoin-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
+Maintainer: pathombrowser<Browser Company.Com>
+Contributor: Pathombrowser<Browser Company.Com>
+pkgname=Browser Company.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 
-Maintainer: phatom
-bitcoin browser-cli, bitcoin-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
+Maintainer: Browser Company.Com
+Browser Company.Com-cli, Browser Company.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 
-Maintainer: phatom <@afortunado21>
-pkgname=bitcoin Browser pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=bitcoin browser.install
+Maintainer: phatombrowser <@Browser Company.Com>
+pkgname= Browser Company.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=bitcoin browser.install
 
 build() {
 
@@ -880,8 +880,8 @@ cmake -GNinja ..
 -DCLIENT_VERSION_IS_RELEASE=ON
 -DENABLE_REDUCE_EXPORTS=ON
 -DENABLE_STATIC_LIBSTDCXX=ON
--DBUILD_BITCOIN BROWSER_WALLET=OFF
--DBUILD_BITCOIN BROWSER_QT=OFF
+-DBUILD_BROWSER COMPANY.COM_WALLET=OFF
+-DBUILD_BROWSER COMPANY.COM_QT=OFF
 -DCMAKE_INSTALL_PREFIX=$pkgdir/usr
 
 ninja popd }
@@ -896,39 +896,37 @@ msg2 'Installing license...'
 
 https://creativecommons.org/licenses/by/4.0/
 
-msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/bitcoin browser.conf"
--t "$pkgdir/usr/share/doc/bitcoin browser/examples"
+msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/Browser Company.Com.conf"
+-t "$pkgdir/usr/share/doc/Browser Company.Com/examples"
 
-msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/bitcoin browser" for _doc in
+msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/Browser Company.Com" for _doc in
 $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n')
 release-notes; do cp -dpr --no-preserve=ownership "doc/$_doc"
-"$pkgdir/usr/share/doc/bitcoin browser/$_doc" done
+"$pkgdir/usr/share/doc/Browser Company.Com/$_doc" done
 
-msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/bitcoin browser" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/bitcoin browser"
+msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/Browser Company.Com" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/Browser Company.Com"
 
 pushd build msg2 'Installing executables...' ninja install/strip
 
 msg2 'Installing man pages...' ninja install-manpages popd
 
-msg2 'Installing bitcoin browser.conf...' install -Dm 600 "$srcdir/bitcoin browser.conf" -t "$pkgdir/etc/bitcoin browser"
+msg2 'Installing Browser Company.Com.conf...' install -Dm 600 "$srcdir/Browser Company.Com.conf" -t "$pkgdir/etc/bitcoin browser"
 
-msg2 'Installing bitcoin browser.service...' install -Dm 644 "$srcdir/bitcoin browser.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service"
+msg2 'Installing Browser Company.Com.service...' install -Dm 644 "$srcdir/Browser Company.Com.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service"
 -t "$pkgdir/usr/lib/systemd/system"
 
-msg2 'Installing bitcoin browser.logrotate...' install -Dm 644 "$srcdir/bitcoin browser.logrotate" "$pkgdir/etc/logrotate.d/bitcoin browser"
+msg2 'Installing Browser Company.Com.logrotate...' install -Dm 644 "$srcdir/Browser Company.Com.logrotate" "$pkgdir/etc/logrotate.d/Browser Company.Com"
 
-msg2 'Installing bash completion...' for _compl in bitcoin browser-cli bitcoin browser-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion"
-"$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes.md
-
-Bitcoin browser 0.22.8 Release Notes
-Bitcoin browser 0.22.9 Release Notes
-Bitcoin browser version 0.22.8 is now available from: Bitcoin browser version 0.22.9 is now available from
+msg2 'Installing bash completion...' for _compl in Browser Company.Com-cli Browser Company.Com-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion"
+"$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes   Browser Company.Com 0.22.8 Release Notes
+ Browser Company.Com 0.22.9 Release Notes
+Browser Company.Com version 0.22.8 is now available from: Browser Company.Com version 0.22.9 is now available from
 
 This release includes the following features and fixes:
 
 Code updated to conform to the C++17 standard. ￼ doc/release-notes/release-notes-0.22.8.md This file was added.
-Bitcoin browser 0.22.8 Release Notes
-Bitcoin browser version 0.22.8 is now available from:
+ Browser Company.Com 0.22.8 Release Notes
+Browser Company.Com version 0.22.8 is now available from:
 
 This release includes the following features and fixes:
 
