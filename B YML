@@ -1,6 +1,5 @@
-  # BROWSER COIN 
+# BROWSER COIN
 
-New coin with the genesis of Bitcoin
 New coin with the genesis of Bitcoin
 https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 
@@ -1474,7 +1473,7 @@ test_script:
 # https://github.com/_Browser Coin Company.com/Browser Coin Company.com/issues/18623
 # - cmd: python test\functional\test_runner.py --ci --quiet --combinedlogslen=4000 --failfast --exclude feature_fee_estimation
 artifacts:
-#- path: bitcoin-%APPVEYOR_BUILD_VERSION%.zip
+#- path: Browser Company.Com-%APPVEYOR_BUILD_VERSION%.zip
 
 
 ###  Global defaults
