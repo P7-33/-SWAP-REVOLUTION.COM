@@ -25,7 +25,7 @@ https://github.com/P7-33/BROWSER COIN COMPANY.COM.wiki.git
   License: 2-clause BSD
 </pre>
 
- ==# Abstract ==
+ == Abstract ==
 
  ("HD Wallets"): wallets which can be shared partially or entirely with different systems, each with or without the ability to spend coins.
 
