@@ -106,7 +106,6 @@ AC_ARG_WITH([boost-process],
 			fi
 		fi
 		
-
 		CPPFLAGS="$CPPFLAGS_SAVED"
 	LDFLAGS="$LDFLAGS_SAVED"
 	fi
