@@ -1,4 +1,153 @@
+task:
+  name: 'ARM [unit tests, no functional tests] [bullseye]'
+  << : *GLOBAL_TASK_TEMPLATE
+  arm_container:
+    image: debian:bullseye
+    cpu: 2
+    memory: 8G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_arm.sh"
+    QEMU_USER_CMD: ""  # Disable qemu and run the test natively
+
+task:
+  name: 'Win64 [unit tests, no gui tests, no boost::process, no functional tests] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_win64.sh"
+
+task:
+  name: '32-bit + dash [gui] [CentOS 8]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: quay.io/centos/centos:stream8
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    PACKAGE_MANAGER_INSTALL: "yum install -y"
+    FILE_ENV: "./ci/test/00_setup_env_i686_centos.sh"
+
+task:
+  name: '[previous releases, uses qt5 dev package and some depends packages, DEBUG] [unsigned char] [bionic]'
+  previous_releases_cache:
+    folder: "releases"
+  << : *GLOBAL_TASK_TEMPLATE
+  << : *PERSISTENT_WORKER_TEMPLATE
+  env:
+    << : *PERSISTENT_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_qt5.sh"
+
+task:
+  name: '[TSan, depends, gui] [jammy]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:jammy
+    cpu: 6  # Increase CPU and Memory to avoid timeout
+    memory: 24G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_tsan.sh"
+
+task:
+  name: '[MSan, depends] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_msan.sh"
+    MAKEJOBS: "-j4"  # Avoid excessive memory use due to MSan
+
+task:
+  name: '[ASan + LSan + UBSan + integer, no depends] [jammy]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:jammy
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_asan.sh"
+    MAKEJOBS: "-j4"  # Avoid excessive memory use
+
+task:
+  name: '[fuzzer,address,undefined,integer, no depends] [focal]'
+  only_if: $CIRRUS_BRANCH == $CIRRUS_DEFAULT_BRANCH || $CIRRUS_BASE_BRANCH == $CIRRUS_DEFAULT_BRANCH
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+    cpu: 4  # Increase CPU and memory to avoid timeout
+    memory: 16G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
+
+task:
+  name: '[multiprocess, i686, DEBUG] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+    cpu: 4
+    memory: 16G  # The default memory is sometimes just a bit too small, so double everything
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_i686_multiprocess.sh"
+
+task:
+  name: '[no wallet] [bionic]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:bionic
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_nowallet.sh"
+
+task:
+  name: 'macOS 10.15 [gui, no tests] [focal]'
+  << : *BASE_TEMPLATE
+  macos_sdk_cache:
+    folder: "depends/SDKs/$MACOS_SDK"
+    fingerprint_key: "$MACOS_SDK"
+  << : *MAIN_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    MACOS_SDK: "Xcode-12.2-12B45b-extracted-SDK-with-libcxx-headers"
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_mac.sh"
+
+task:
+  name: 'macOS 12 native [gui, system sqlite only] [no depends]'
+  brew_install_script:
+    - brew install boost libevent qt@5 miniupnpc libnatpmp ccache zeromq qrencode libtool automake gnu-getopt
+  << : *GLOBAL_TASK_TEMPLATE
+  macos_instance:
+    # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
+    image: monterey-xcode-13.2  # https://cirrus-ci.org/guide/macOS
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    CI_USE_APT_INSTALL: "no"
+    PACKAGE_MANAGER_INSTALL: "echo"  # Nothing to do
+    FILE_ENV: "./ci/test/00_setup_env_mac_host.sh"
+
+task:
+  name: 'ARM64 Android APK [focal]'
+  << : *BASE_TEMPLATE
+  android_sdk_cache:
+    folder: "depends/SDKs/android"
+    fingerprint_key: "ANDROID_API_LEVEL=28 ANDROID_BUILD_TOOLS_VERSION=28.0.3 ANDROID_NDK_VERSION=23.1.7779620"
+  depends_sources_cache:
+    folder: "depends/sources"
+    fingerprint_script: git rev-list -1 HEAD ./depends
+  << : *MAIN_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_android.sh"
+
 # BITCOIN-BROWSER
+
 New coin with the genesis of Bitcoin
 README.md
 https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitNew coin with the genesis of Bitcoin
