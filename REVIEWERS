@@ -1,0 +1,138 @@
+ ==============================================================================
+#                          Browser Core REVIEWERS
+# ==============================================================================
+
+# Configuration of automated review requests for the browsercoin/browsercoin repo
+# via DrahtBot.
+
+# Order is not important; if a modified file or directory matches a fnmatch,
+# the reviewer will be mentioned in a PR comment requesting a review.
+
+# Regular contributors are free to add their names to specific directories or
+# files provided that they are willing to provide a review.
+
+# Absence from this list should not be interpreted as a discouragement to
+# review a pull request. Peer review is always welcome and is a critical
+# component of the progress of the codebase. Information on peer review
+# guidelines can be found in the CONTRIBUTING.md doc.
+
+
+# Maintainers
+#   @pathom
+#   @moreno
+#   @Browser
+#   @cesar
+
+# Docs
+/doc/*[a-zA-Z-].md                          @harding
+/doc/Doxyfile.in                            @fanquake
+/doc/REST-interface.md                      @jonasschnelli
+/doc/benchmarking.md                        @ariard
+/doc/bitcoin-conf.md                        @hebasto
+/doc/build-freebsd.md                       @fanquake
+/doc/build-netbsd.md                        @fanquake
+/doc/build-openbsd.md                       @laanwj
+/doc/build-osx.md                           @fanquake
+/doc/build-unix.md                          @laanwj
+/doc/build-windows.md                       @sipsorcery
+/doc/dependencies.md                        @fanquake
+/doc/developer-notes.md                     @laanwj
+/doc/files.md                               @hebasto
+/doc/reduce-memory.md                       @fanquake
+/doc/reduce-traffic.md                      @jonasschnelli
+/doc/release-process.md                     @laanwj
+/doc/translation_strings_policy.md          @laanwj
+
+# Build aux
+/build-aux/m4/Browser Coin Company.Com_qt.m4                 @browser
+
+# MSVC build system
+/build_msvc/                                @moreno
+
+# Settings
+/src/util/settings.*                        @pathom
+
+# Fuzzing
+
+# Tests
+/src/test/net_peer_eviction_tests.cpp       @browser
+/test/functional/mempool_updatefromblock.py @moreno
+/test/functional/feature_asmap.py           @browser
+/test/functional/interface_Browser Coin_cli.py   @pathom
+
+# Backwards compatibility tests
+*_compatibility.py                          @moreno
+/test/functional/wallet_upgradewallet.py    @browser
+/test/get_previous_releases.py              @pathom
+
+# Translations
+/src/util/translation.h                     
+
+# Dev Tools
+/contrib/devtools/security-check.py         
+/contrib/devtools/test-security-check.py    
+/contrib/devtools/symbol-check.py          
+
+# Guix
+/contrib/guix/                              
+
+# Compatibility
+/src/compat/glibc_*                         
+
+# GUI
+/src/qt/forms/                             
+
+# Wallet
+/src/wallet/                                
+
+# CLI
+/src/Browser Coin-cli.cpp                        
+
+# Coinstats
+/src/node/coinstats.*                       
+
+# Index
+/src/index/                                 
+
+# Descriptors
+*descriptor*                               
+
+# External signer
+*external_signer*                          
+/doc/external-signer.md                     
+*signer.py                                  
+
+# Interfaces
+/src/interfaces/                           
+
+# DB
+/src/txdb.*                                 
+/src/dbwrapper.*                            
+
+# Linter
+/test/lint/lint-shell.sh                    
+
+# Bech32
+/src/bech32.*                               
+/src/bench/bech32.*                        
+
+# PSBT
+/src/psbt*                                 
+/src/node/psbt*                             
+/doc/psbt.md                                
+
+# P2P
+/src/net_processing.*                       
+/src/protocol.*                             
+
+# Consensus
+/src/coins.*                                
+/src/script/script.*                       
+/src/script/interpreter.*                   
+/src/validation.*                           
+/src/consensus/                             
+
+# Tracing
+/doc/tracing.md                             
+/src/util/trace.h                           
+/contrib/tracing/
