@@ -1,3 +1,5 @@
+[id]: url/to/image  "BROWSER COMPANY.COM"
+
 https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
 ---
 version: ~> 1.0
