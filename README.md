@@ -1,253 +1,7 @@
 [id]: url/to/image  "BROWSER COMPANY.COM"
 
 https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
----
-version: ~> 1.0
 
-dist: bionic
-os: linux
-language: minimal
-arch: amd64
-cache:
-  directories:
-    - $TRAVIS_BUILD_DIR/depends/built
-    - $TRAVIS_BUILD_DIR/depends/sdk-sources
-    - $TRAVIS_BUILD_DIR/ci/scratch/.ccache
-    - $TRAVIS_BUILD_DIR/releases/$HOST
-stages:
-  - lint
-  - test
-env:
-  global:
-    - CI_RETRY_EXE="travis_retry"
-    - CACHE_ERR_MSG="Error! Initial build successful, but not enough time remains to run later build stages and tests. See https://docs.travis-ci.com/user/customizing-the-build#build-timeouts . Please manually re-run this job by using the travis restart button. The next run should not time out because the build cache has been saved."
-before_install:
-  - set -o errexit; source ./ci/test/00_setup_env.sh
-  - set -o errexit; source ./ci/test/03_before_install.sh
-install:
-  - set -o errexit; source ./ci/test/04_install.sh
-before_script:
-  # Temporary workaround for https://github.com/BrowserCoin/BrowserCoin/issues/16368
-  - for i in {1..4}; do echo "$(sleep 500)" ; done &
-  - set -o errexit; source ./ci/test/05_before_script.sh &> "/dev/null"
-script:
-  - export CONTINUE=1
-  - if [ $SECONDS -gt 1200 ]; then export CONTINUE=0; fi  # Likely the depends build took very long
-  - if [ $TRAVIS_REPO_SLUG = "BrowserCoin/BrowserCoin" ]; then export CONTINUE=1; fi  # continue on repos with extended build time (90 minutes)
-  - if [ $CONTINUE = "1" ]; then set -o errexit; source ./ci/test/06_script_a.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
-  - if [[ $SECONDS -gt 50*60-$EXPECTED_TESTS_DURATION_IN_SECONDS ]]; then export CONTINUE=0; fi
-  - if [ $TRAVIS_REPO_SLUG = "BrowserCoin/BrowserCoin" ]; then export CONTINUE=1; fi  # continue on repos with extended build time (90 minutes)
-  - if [ $CONTINUE = "1" ]; then set -o errexit; source ./ci/test/06_script_b.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
-after_script:
-  - echo $TRAVIS_COMMIT_RANGE
-jobs:
-  include:
-
-    - stage: lint
-      name: 'lint'
-      env:
-      cache: pip
-      language: python
-      python: '3.6' # Oldest supported version according to doc/dependencies.md
-      install:
-        - set -o errexit; source ./ci/lint/04_install.sh
-      before_script:
-        - set -o errexit; source ./ci/lint/05_before_script.sh
-      script:
-        - set -o errexit; source ./ci/lint
-title: Getting started with GitHub Packages for your enterprise
-intro: 'You can start using {% data variables.product.prodname_registry %} on {% data variables.product.product_location %} by enabling the feature, configuring third-party storage, configuring the ecosystems you want to support, and updating your TLS certificate.'
-redirect_from:
-  - /enterprise/admin/packages/enabling-github-packages-for-your-enterprise
-  - /admin/packages/enabling-github-packages-for-your-enterprise
-versions:
-  enterprise-server: '>=2.22'
----
-{% if currentVersion == "enterprise-server@2.22" %}
-
-{% data reusables.package_registry.packages-ghes-release-stage %}
-
-{% note %}
-
-**Note:** After you've been invited to join the beta, follow the instructions from your account representative to enable {% data variables.product.prodname_registry %} for {% data variables.product.product_location %}.
-
-{% endnote %}
-
-{% endif %}
-
-{% data reusables.package_registry.packages-cluster-support %}
-
-### Step 1: Enable {% data variables.product.prodname_registry %} and configure external storage
-
-{% data variables.product.prodname_registry %} on {% data variables.product.prodname_ghe_server %} uses external blob storage to store your packages.
-
-After enabling {% data variables.product.prodname_registry %} for {% data variables.product.product_location %}, you'll need to prepare your third-party storage bucket. The amount of storage required depends on your usage of {% data variables.product.prodname_registry %}, and the setup guidelines can vary by storage provider.
-
-Supported external storage providers
-- Amazon Web Services (AWS) S3 {% if currentVersion ver_gt "enterprise-server@2.22" %}
-- Azure Blob Storage {% endif %}
-- MinIO
-
-To enable {% data variables.product.prodname_registry %} and configure third-party storage, see:
-  - "[Enabling GitHub Packages with AWS](/admin/packages/enabling-github-packages-with-aws)"{% if currentVersion ver_gt "enterprise-server@2.22" %}
-  - "[Enabling GitHub Packages with MinIO](/admin/packages/enabling-github-packages-with-minio)"
-
-### Step 2: Specify the package ecosystems to support on your instance
-
-Choose which package ecosystems you'd like to enable, disable, or set to read-only on your {% data variables.product.product_location %}. Available options are Docker, RubyGems, npm, Apache Maven, Gradle, or NuGet.  For more information, see "[Configuring package ecosystem support for your enterprise](/enterprise/admin/packages/configuring-package-ecosystem-support-for-your-enterprise)."
-
-### Step 3: Ensure you have a TLS certificate for your package host URL, if needed
-
-If subdomain isolation is enabled for {% data variables.product.product_location %}{% if currentVersion == "enterprise-server@2.22" %}, which is required to use {% data variables.product.prodname_registry %} with Docker{% endif %}, you will need to create and upload a TLS certificate that allows the package host URL for each ecosystem you want to use, such as `npm.HOSTNAME`. Make sure each package host URL includes `https://`.
-
-  You can
-task:
-  name: 'ARM [unit tests, no functional tests] [bullseye]'
-  << : *GLOBAL_TASK_TEMPLATE
-  arm_container:
-    image: debian:bullseye
-    cpu: 2
-    memory: 8G
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_arm.sh"
-    QEMU_USER_CMD: ""  # Disable qemu and run the test natively
-
-task:
-  name: 'Win64 [unit tests, no gui tests, no boost::process, no functional tests] [focal]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:focal
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_win64.sh"
-
-task:
-  name: '32-bit + dash [gui] [CentOS 8]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: quay.io/centos/centos:stream8
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    PACKAGE_MANAGER_INSTALL: "yum install -y"
-    FILE_ENV: "./ci/test/00_setup_env_i686_centos.sh"
-
-task:
-  name: '[previous releases, uses qt5 dev package and some depends packages, DEBUG] [unsigned char] [bionic]'
-  previous_releases_cache:
-    folder: "releases"
-  << : *GLOBAL_TASK_TEMPLATE
-  << : *PERSISTENT_WORKER_TEMPLATE
-  env:
-    << : *PERSISTENT_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_qt5.sh"
-
-task:
-  name: '[TSan, depends, gui] [jammy]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:jammy
-    cpu: 6  # Increase CPU and Memory to avoid timeout
-    memory: 24G
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_tsan.sh"
-
-task:
-  name: '[MSan, depends] [focal]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:focal
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_msan.sh"
-    MAKEJOBS: "-j4"  # Avoid excessive memory use due to MSan
-
-task:
-  name: '[ASan + LSan + UBSan + integer, no depends] [jammy]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:jammy
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_asan.sh"
-    MAKEJOBS: "-j4"  # Avoid excessive memory use
-
-task:
-  name: '[fuzzer,address,undefined,integer, no depends] [focal]'
-  only_if: $CIRRUS_BRANCH == $CIRRUS_DEFAULT_BRANCH || $CIRRUS_BASE_BRANCH == $CIRRUS_DEFAULT_BRANCH
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:focal
-    cpu: 4  # Increase CPU and memory to avoid timeout
-    memory: 16G
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
-
-task:
-  name: '[multiprocess, i686, DEBUG] [focal]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:focal
-    cpu: 4
-    memory: 16G  # The default memory is sometimes just a bit too small, so double everything
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_i686_multiprocess.sh"
-
-task:
-  name: '[no wallet] [bionic]'
-  << : *GLOBAL_TASK_TEMPLATE
-  container:
-    image: ubuntu:bionic
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_native_nowallet.sh"
-
-task:
-  name: 'macOS 10.15 [gui, no tests] [focal]'
-  << : *BASE_TEMPLATE
-  macos_sdk_cache:
-    folder: "depends/SDKs/$MACOS_SDK"
-    fingerprint_key: "$MACOS_SDK"
-  << : *MAIN_TEMPLATE
-  container:
-    image: ubuntu:focal
-  env:
-    MACOS_SDK: "Xcode-12.2-12B45b-extracted-SDK-with-libcxx-headers"
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_mac.sh"
-
-task:
-  name: 'macOS 12 native [gui, system sqlite only] [no depends]'
-  brew_install_script:
-    - brew install boost libevent qt@5 miniupnpc libnatpmp ccache zeromq qrencode libtool automake gnu-getopt
-  << : *GLOBAL_TASK_TEMPLATE
-  macos_instance:
-    # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
-    image: monterey-xcode-13.2  # https://cirrus-ci.org/guide/macOS
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    CI_USE_APT_INSTALL: "no"
-    PACKAGE_MANAGER_INSTALL: "echo"  # Nothing to do
-    FILE_ENV: "./ci/test/00_setup_env_mac_host.sh"
-
-task:
-  name: 'ARM64 Android APK [focal]'
-  << : *BASE_TEMPLATE
-  android_sdk_cache:
-    folder: "depends/SDKs/android"
-    fingerprint_key: "ANDROID_API_LEVEL=28 ANDROID_BUILD_TOOLS_VERSION=28.0.3 ANDROID_NDK_VERSION=23.1.7779620"
-  depends_sources_cache:
-    folder: "depends/sources"
-    fingerprint_script: git rev-list -1 HEAD ./depends
-  << : *MAIN_TEMPLATE
-  container:
-    image: ubuntu:focal
-  env:
-    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
-    FILE_ENV: "./ci/test/00_setup_env_android.sh"
 
 # BROWSER COIN
 
@@ -268,7 +22,16 @@ https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git New coin with the genesis 
   Type: Informational
   Created: 2019-11-23
   License: 2-clause BSD
+
 ==Abstract==
+
+JSON string encoder for Movable Type.
+
+Usage in Movable Type templates (particularly useful for JSON feeds):
+
+<MTEntries lastn="5">
+"content_html" : "<MTEntryBody escape_for_json='1'>"
+</MTEntries>
 
 ("HD Wallets"): wallets which can be shared partially or entirely with different systems, each with or without the ability to spend coins.
 
@@ -1184,5 +947,254 @@ This release includes the following features and fixes:
 
 Code updated to conform to the C++17 standard. Log In to Comment New Inline Comment
 BOOST_AUTO_TEST_SUITE_END() © 2020 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub Pricing API Training Blog About
+
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+---
+version: ~> 1.0
+
+dist: bionic
+os: linux
+language: minimal
+arch: amd64
+cache:
+  directories:
+    - $TRAVIS_BUILD_DIR/depends/built
+    - $TRAVIS_BUILD_DIR/depends/sdk-sources
+    - $TRAVIS_BUILD_DIR/ci/scratch/.ccache
+    - $TRAVIS_BUILD_DIR/releases/$HOST
+stages:
+  - lint
+  - test
+env:
+  global:
+    - CI_RETRY_EXE="travis_retry"
+    - CACHE_ERR_MSG="Error! Initial build successful, but not enough time remains to run later build stages and tests. See https://docs.travis-ci.com/user/customizing-the-build#build-timeouts . Please manually re-run this job by using the travis restart button. The next run should not time out because the build cache has been saved."
+before_install:
+  - set -o errexit; source ./ci/test/00_setup_env.sh
+  - set -o errexit; source ./ci/test/03_before_install.sh
+install:
+  - set -o errexit; source ./ci/test/04_install.sh
+before_script:
+  # Temporary workaround for https://github.com/BrowserCoin/BrowserCoin/issues/16368
+  - for i in {1..4}; do echo "$(sleep 500)" ; done &
+  - set -o errexit; source ./ci/test/05_before_script.sh &> "/dev/null"
+script:
+  - export CONTINUE=1
+  - if [ $SECONDS -gt 1200 ]; then export CONTINUE=0; fi  # Likely the depends build took very long
+  - if [ $TRAVIS_REPO_SLUG = "BrowserCoin/BrowserCoin" ]; then export CONTINUE=1; fi  # continue on repos with extended build time (90 minutes)
+  - if [ $CONTINUE = "1" ]; then set -o errexit; source ./ci/test/06_script_a.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
+  - if [[ $SECONDS -gt 50*60-$EXPECTED_TESTS_DURATION_IN_SECONDS ]]; then export CONTINUE=0; fi
+  - if [ $TRAVIS_REPO_SLUG = "BrowserCoin/BrowserCoin" ]; then export CONTINUE=1; fi  # continue on repos with extended build time (90 minutes)
+  - if [ $CONTINUE = "1" ]; then set -o errexit; source ./ci/test/06_script_b.sh; else set +o errexit; echo "$CACHE_ERR_MSG"; false; fi
+after_script:
+  - echo $TRAVIS_COMMIT_RANGE
+jobs:
+  include:
+
+    - stage: lint
+      name: 'lint'
+      env:
+      cache: pip
+      language: python
+      python: '3.6' # Oldest supported version according to doc/dependencies.md
+      install:
+        - set -o errexit; source ./ci/lint/04_install.sh
+      before_script:
+        - set -o errexit; source ./ci/lint/05_before_script.sh
+      script:
+        - set -o errexit; source ./ci/lint
+title: Getting started with GitHub Packages for your enterprise
+intro: 'You can start using {% data variables.product.prodname_registry %} on {% data variables.product.product_location %} by enabling the feature, configuring third-party storage, configuring the ecosystems you want to support, and updating your TLS certificate.'
+redirect_from:
+  - /enterprise/admin/packages/enabling-github-packages-for-your-enterprise
+  - /admin/packages/enabling-github-packages-for-your-enterprise
+versions:
+  enterprise-server: '>=2.22'
+---
+{% if currentVersion == "enterprise-server@2.22" %}
+
+{% data reusables.package_registry.packages-ghes-release-stage %}
+
+{% note %}
+
+**Note:** After you've been invited to join the beta, follow the instructions from your account representative to enable {% data variables.product.prodname_registry %} for {% data variables.product.product_location %}.
+
+{% endnote %}
+
+{% endif %}
+
+{% data reusables.package_registry.packages-cluster-support %}
+
+### Step 1: Enable {% data variables.product.prodname_registry %} and configure external storage
+
+{% data variables.product.prodname_registry %} on {% data variables.product.prodname_ghe_server %} uses external blob storage to store your packages.
+
+After enabling {% data variables.product.prodname_registry %} for {% data variables.product.product_location %}, you'll need to prepare your third-party storage bucket. The amount of storage required depends on your usage of {% data variables.product.prodname_registry %}, and the setup guidelines can vary by storage provider.
+
+Supported external storage providers
+- Amazon Web Services (AWS) S3 {% if currentVersion ver_gt "enterprise-server@2.22" %}
+- Azure Blob Storage {% endif %}
+- MinIO
+
+To enable {% data variables.product.prodname_registry %} and configure third-party storage, see:
+  - "[Enabling GitHub Packages with AWS](/admin/packages/enabling-github-packages-with-aws)"{% if currentVersion ver_gt "enterprise-server@2.22" %}
+  - "[Enabling GitHub Packages with MinIO](/admin/packages/enabling-github-packages-with-minio)"
+
+### Step 2: Specify the package ecosystems to support on your instance
+
+Choose which package ecosystems you'd like to enable, disable, or set to read-only on your {% data variables.product.product_location %}. Available options are Docker, RubyGems, npm, Apache Maven, Gradle, or NuGet.  For more information, see "[Configuring package ecosystem support for your enterprise](/enterprise/admin/packages/configuring-package-ecosystem-support-for-your-enterprise)."
+
+### Step 3: Ensure you have a TLS certificate for your package host URL, if needed
+
+If subdomain isolation is enabled for {% data variables.product.product_location %}{% if currentVersion == "enterprise-server@2.22" %}, which is required to use {% data variables.product.prodname_registry %} with Docker{% endif %}, you will need to create and upload a TLS certificate that allows the package host URL for each ecosystem you want to use, such as `npm.HOSTNAME`. Make sure each package host URL includes `https://`.
+
+  You can
+task:
+  name: 'ARM [unit tests, no functional tests] [bullseye]'
+  << : *GLOBAL_TASK_TEMPLATE
+  arm_container:
+    image: debian:bullseye
+    cpu: 2
+    memory: 8G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_arm.sh"
+    QEMU_USER_CMD: ""  # Disable qemu and run the test natively
+
+task:
+  name: 'Win64 [unit tests, no gui tests, no boost::process, no functional tests] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_win64.sh"
+
+task:
+  name: '32-bit + dash [gui] [CentOS 8]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: quay.io/centos/centos:stream8
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    PACKAGE_MANAGER_INSTALL: "yum install -y"
+    FILE_ENV: "./ci/test/00_setup_env_i686_centos.sh"
+
+task:
+  name: '[previous releases, uses qt5 dev package and some depends packages, DEBUG] [unsigned char] [bionic]'
+  previous_releases_cache:
+    folder: "releases"
+  << : *GLOBAL_TASK_TEMPLATE
+  << : *PERSISTENT_WORKER_TEMPLATE
+  env:
+    << : *PERSISTENT_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_qt5.sh"
+
+task:
+  name: '[TSan, depends, gui] [jammy]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:jammy
+    cpu: 6  # Increase CPU and Memory to avoid timeout
+    memory: 24G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_tsan.sh"
+
+task:
+  name: '[MSan, depends] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_msan.sh"
+    MAKEJOBS: "-j4"  # Avoid excessive memory use due to MSan
+
+task:
+  name: '[ASan + LSan + UBSan + integer, no depends] [jammy]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:jammy
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_asan.sh"
+    MAKEJOBS: "-j4"  # Avoid excessive memory use
+
+task:
+  name: '[fuzzer,address,undefined,integer, no depends] [focal]'
+  only_if: $CIRRUS_BRANCH == $CIRRUS_DEFAULT_BRANCH || $CIRRUS_BASE_BRANCH == $CIRRUS_DEFAULT_BRANCH
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+    cpu: 4  # Increase CPU and memory to avoid timeout
+    memory: 16G
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_fuzz.sh"
+
+task:
+  name: '[multiprocess, i686, DEBUG] [focal]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:focal
+    cpu: 4
+    memory: 16G  # The default memory is sometimes just a bit too small, so double everything
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_i686_multiprocess.sh"
+
+task:
+  name: '[no wallet] [bionic]'
+  << : *GLOBAL_TASK_TEMPLATE
+  container:
+    image: ubuntu:bionic
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_native_nowallet.sh"
+
+task:
+  name: 'macOS 10.15 [gui, no tests] [focal]'
+  << : *BASE_TEMPLATE
+  macos_sdk_cache:
+    folder: "depends/SDKs/$MACOS_SDK"
+    fingerprint_key: "$MACOS_SDK"
+  << : *MAIN_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    MACOS_SDK: "Xcode-12.2-12B45b-extracted-SDK-with-libcxx-headers"
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_mac.sh"
+
+task:
+  name: 'macOS 12 native [gui, system sqlite only] [no depends]'
+  brew_install_script:
+    - brew install boost libevent qt@5 miniupnpc libnatpmp ccache zeromq qrencode libtool automake gnu-getopt
+  << : *GLOBAL_TASK_TEMPLATE
+  macos_instance:
+    # Use latest image, but hardcode version to avoid silent upgrades (and breaks)
+    image: monterey-xcode-13.2  # https://cirrus-ci.org/guide/macOS
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    CI_USE_APT_INSTALL: "no"
+    PACKAGE_MANAGER_INSTALL: "echo"  # Nothing to do
+    FILE_ENV: "./ci/test/00_setup_env_mac_host.sh"
+
+task:
+  name: 'ARM64 Android APK [focal]'
+  << : *BASE_TEMPLATE
+  android_sdk_cache:
+    folder: "depends/SDKs/android"
+    fingerprint_key: "ANDROID_API_LEVEL=28 ANDROID_BUILD_TOOLS_VERSION=28.0.3 ANDROID_NDK_VERSION=23.1.7779620"
+  depends_sources_cache:
+    folder: "depends/sources"
+    fingerprint_script: git rev-list -1 HEAD ./depends
+  << : *MAIN_TEMPLATE
+  container:
+    image: ubuntu:focal
+  env:
+    << : *CIRRUS_EPHEMERAL_WORKER_TEMPLATE_ENV
+    FILE_ENV: "./ci/test/00_setup_env_android.sh"
 
 https://creativecommons.org/
