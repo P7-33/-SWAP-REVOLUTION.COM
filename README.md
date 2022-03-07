@@ -1,8 +1,7 @@
 # BROWSER-COMPANY.COM
 New coin with the genesis of Bitcoin
 Skip to content
-Your account has been flagged.
-Because of that, your profile is hidden from the public. If you believe this is a mistake, contact support to have your account status reviewed.
+your account status 
 P7-33
 /
 BROWSER-COMPANY.COM
