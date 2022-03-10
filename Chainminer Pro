@@ -14,8 +14,7 @@ NiceHashBot/NHB3/Api.cs
 @bl4z
 bl4z order settings
  1 contributor
-212 lines (183 sloc)  7.1 KB
- 
+ https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
