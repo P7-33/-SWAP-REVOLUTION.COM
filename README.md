@@ -101,6 +101,75 @@ In addition to the README you're reading right now, this repo includes other REA
 - [stylesheets/README.md](stylesheets/README.md)
 - [tests/README.md](tests/README.md)
 
+# Contributing to this repository <!-- omit in toc -->
+
+## Getting started <!-- omit in toc -->
+
+Before you begin:
+- This site is powered by Node.js. Check to see if you're on the [version of node we support](contributing/development.md).
+- Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
+- Check out the [existing issues](https://github.com/github/docs/issues) & see if we [accept contributions](#types-of-contributions-memo) for your type of issue.
+
+### Use the 'make a contribution' button
+
+<img src="./assets/images/contribution_cta.png" width="400">
+
+Navigating a new codebase can be challenging, so we're making that a little easier. As you're using docs.github.com, you may come across an article that you want to make an update to. You can click on the **make a contribution** button right on that article, which will take you to the file in this repo where you'll make your 
+
+Fork using GitHub Desktop:
+
+- [Getting started with GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/getting-started-with-github-desktop) will guide you through setting up Desktop.
+- Once Desktop is set up, you can use it to [fork the repo](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/cloning-and-forking-repositories-from-github-desktop)!
+
+Fork using the command line:
+
+- [Fork the repo](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#fork-an-example-repository) so that you can make your changes without affecting the original project until you're ready to merge them.
+
+Fork with [GitHub Codespaces](https://github.com/features/codespaces):
+
+- [Fork, edit, and preview](https://docs.github.com/en/free-pro-team@latest/github/developing-online-with-codespaces/creating-a-codespace) using [GitHub Codespaces](https://github.com/features/codespaces) without having to install and run the project locally.
+
+### Make your update:
+Make your changes to the file(s) you'd like to update. Here are some tips and tricks for [using the docs codebase](#working-in-the-githubdocs-repository).
+  - Are you making changes to the application code? You'll need **Node.js v14** to run the site locally. See [contributing/development.md](contributing/development.md).
+  - Are you contributing to markdown? We use [GitHub Markdown](contributing/content-markup-reference.md).
+
+### Open a pull request
+When you're done making changes and you'd like to propose them for review, use the [pull request template](#pull-request-template) to open your PR (pull request).
+
+### Submit your PR & get it reviewed
+- Once you submit your PR, others from the Docs community will review it with you. The first thing you're going to want to do is a [self review](#self-review).
+- After that, we may have questions, check back on your PR to keep up with the conversation.
+- Did you have an issue, like a merge conflict? Check out our [git tutorial](https://lab.github.com/githubtraining/managing-merge-conflicts) on how to resolve merge conflicts and other issues.
+
+### Your PR is merged!
+Congratulations! The whole GitHub community thanks you. :sparkles:
+
+Once your PR is merged, you will be proudly listed as a contributor in the [contributor chart](https://github.com/github/docs/graphs/contributors).
+
+### Keep contributing as you use GitHub Docs
+
+Now that you're a part of the GitHub Docs community, you can keep participating in many ways.
+
+**Learn more about contributing:**
+
+- [Types of contributions :memo:](#types-of-contributions-memo)
+  - [:mega: Discussions](#mega-discussions)
+  - [:beetle: Issues](#beetle-issues)
+  - [:hammer_and_wrench: Pull requests](#hammer_and_wrench-pull-requests)
+  - [:question: Support](#question-support)
+  - [:earth_asia: Translations](#earth_asia-translations)
+  - [:balance_scale: Site Policy](#balance_scale-site-policy)
+- [Starting with an issue](#starting-with-an-issue)
+  - [Labels](#labels)
+- [Opening a pull request](#opening-a-pull-request)
+- [Working in the github/docs repository](#working-in-the-githubdocs-repository)
+- [Reviewing](#reviewing)
+  - [Self review](#self-review)
+  - [Pull request template](#pull-request-template)
+  - [Suggested changes](#suggested-changes)
+- [Windows](#windows 
+
 ## License
 
 The GitHub product documentation in the assets, content, and data folders are licensed under a [CC-BY license](LICENSE).
