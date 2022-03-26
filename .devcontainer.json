@@ -1,0 +1,19 @@
+https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git/devcontainer.Json
+{
+ {
+    "name":"https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git/decontainer.Json"
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "cSpell.language": ",en"
+    },
+    // Install pre-requisites and run a build to ensure we are ready to start serving docs.github.com locally (via `npm start`)
+    "postCreateCommand": "npm ci && npm run build",
+    "forwardPorts": [4000],
+    // Visual Studio Code extensions which help authoring for docs=https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+    "extensions": [
+        "yzhang.markdown-all-in-one",
+        "streetsidesoftware.code-spell-checker"
+        https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+    ]
+  }
+}
