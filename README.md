@@ -47,6 +47,16 @@ In this article:
 
 ## Contributing
 
+- This site is powered by Node.js. Check to see if you're on the [version of node we support](contributing/development.md).
+- Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
+- Check [accept contributions](#types-of-contributions-memo) for 
+
+### :earth_asia: Translations
+
+This website is internationalized and available in multiple languages. The source content in this repository is written in English. We integrate with an external localization platform called [Crowdin](https://crowdin.com) and work with professional translators to localize the English content.
+
+**We do not currently accept contributions for translated content**, but we hope to in the future.
+
 ### Start contributing right now:
 
 We accept a lot of [different contributions](CONTRIBUTING.md/#types-of-contributions-memo), including some that don't require you to write a single line of code.
@@ -181,7 +191,13 @@ The GitHub product documentation in the assets, content, and data folders are li
 All other code in this repository is licensed under a [MIT license](LICENSE-CODE).
 
 When using the GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos).
-https://github.com/P7-33/Docs-BTCBROWSER-Segurity.io-.wiki.git
+
+
+### :earth_asia: Translations
+
+This website is internationalized and available in multiple languages. The source content in this repository is written in English. We integrate with an external localization platform called [Crowdin](https://crowdin.com) and work with professional translators to localize the English content.
+
+**We do not currently accept contributions for translated content**, but we hope to in the future.
 
 BROWSER COIN
 New coin with the genesis of Bitcoin README.md https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git New coin with the genesis of Bitcoin
