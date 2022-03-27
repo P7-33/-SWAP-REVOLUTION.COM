@@ -1,10 +1,11 @@
-# BROWSER-COMPANY.COM
+# BROWSER-REVOLUTION.COM
+
 New coin with the genesis of Bitcoin
 Skip to content
 your account status 
 P7-33
 /
-BROWSER-COMPANY.COM
+BROWSER-REVOLUTION.COM
 Public template
 forked from afortunado21/BITCOIN-BROWSER
 Code
@@ -16,7 +17,7 @@ Wiki
 Security
 Insights
 Settings
-BROWSER-COMPANY.COM/tock-register-interface/readme.md
+BROWSER-REVOLUTION.COM/tock-register-interface/readme.md
 @P7-33
 P7-33 Update and rename README.md to tock-register-interface/readme.md
  1 contributor
@@ -26,7 +27,7 @@ encode
 
   BIP: 32
   Layer: Applications
-  Autor: "BROWSER COMPANY.COM"
+  Autor: "BROWSER REVOLUTION.COM"
   Comments-Summary: No comments yet.
   Comments-URI:https://github.com/P7-33/HTTPS-BROWSER-COMPANY-Segurity.io.wiki.git /comment :BIP-0032
   Status: FinalBROWSER COMPANY.COM
@@ -35,7 +36,7 @@ encode
   Created: 2019-11-23
   License: 2-clause BSD
 
-## BROWSER COMPANY
+## BROWSER REVOLUTION.COM
 
 GitHub's Docs team works on pre-production content in a private repo that regularly syncs with this public repo.
 
