@@ -5,7 +5,7 @@ Skip to content
 your account status 
 P7-33
 /
-BROWSER-REVOLUTION.COM
+BROWSER REVOLUTION.COM
 Public template
 forked from afortunado21/BITCOIN-BROWSER
 Code
@@ -22,15 +22,15 @@ BROWSER-REVOLUTION.COM/tock-register-interface/readme.md
 P7-33 Update and rename README.md to tock-register-interface/readme.md
  1 contributor
 1977 lines (1539 sloc)  101 KB
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git
 encode
 
   BIP: 32
   Layer: Applications
   Autor: "BROWSER REVOLUTION.COM"
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/P7-33/HTTPS-BROWSER-COMPANY-Segurity.io.wiki.git /comment :BIP-0032
-  Status: FinalBROWSER COMPANY.COM
+  Comments-URI:https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git/comment :BIP-0032
+  Status: FinalBROWSER REVOLUTION.COM
   Type: Informational
   Owner:Cesar Moreno 
   Created: 2019-11-23
@@ -1003,13 +1003,13 @@ t.vout[0].scriptPubKey = CScript() << OP_RETURN << ParseHex("04678afdb0fe5548271
 
 t.vout[0].scriptPubKey = CScript() << OP_RETURN; t.vout[1].scriptPubKey = CScript() << OP_RETURN;
 
-BOOST_CHECK(!IsStandardTx(CTransaction(t), reason)); This directory contains integration tests that test Browser Company.Com and its utilities in their entirety. It does not contain unit tests, which can be found in /src/test, /src/wallet/test, etc.
+BOOST_CHECK(!IsStandardTx(CTransaction(t), reason)); This directory contains integration tests that test Browser Revolution.Com and its utilities in their entirety. It does not contain unit tests, which can be found in /src/test, /src/wallet/test, etc.
 
 This directory contains the following sets of tests:
 
-functional which test the functionality of Browser Company.Com) lint which perform various static analysis checks. The util tests are run as part of make check target. The functional tests and lint scripts can be run as explained in the sections below.
+functional which test the functionality of Browser Revolution.Com) lint which perform various static analysis checks. The util tests are run as part of make check target. The functional tests and lint scripts can be run as explained in the sections below.
 
-Running tests locally Before tests can be run locally, Browser Company.Com must be built. See the building instructions for help.
+Running tests locally Before tests can be run locally, Browser Revolution.Com must be built. See the building instructions for help.
 
 Functional tests Dependencies The ZMQ functional test requires a python ZMQ library. To install it:
 
@@ -1035,15 +1035,15 @@ The individual tests and the test_runner harness have many command-line options.
 
 Troubleshooting and debugging test failures Resource contention #https://www.gnu.org/philosophy/free-sw.html
 
-The P2P and RPC ports used by the Browser Company.Com nodes-under-test are chosen to make conflicts with other processes unlikely. However, if there is another Browser Company.Com process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will cause the test to fail. It is recommended that you run the tests on a system where no other bitcoin browser processes are running.
+The P2P and RPC ports used by the Browser Revolution.Com nodes-under-test are chosen to make conflicts with other processes unlikely. However, if there is another Browser Revolution.Com process running on the system (perhaps from a previous test which hasn't successfully all its bitcoin browser nodes), then there may be a port conflict which will cause the test to fail. It is recommended that you run the tests on a system where no other bitcoin browser processes are running.
 
-On linux, the test framework will warn if there is another Browser Company.Com process running when the tests are started. Ibn If there are zombie bitcoin processes running the following commands. Note that these commands will fall all Browser Company.Com processes running on the system, so should not be used if any non-test Browser Company.Com processes are being run.
+On linux, the test framework will warn if there is another Browser Revolution.Com process running when the tests are started. Ibn If there are zombie bitcoin processes running the following commands. Note that these commands will fall all Browser Revolution.Com processes running on the system, so should not be used if any non-test Browser Revolution.Com processes are being run.
 
-Call Browser Company.Com or
+Call Browser Revolution.Com or
 
-pcall -9 Browser Company.Com Data directory cache A pre-mined blockchain with 200 blocks is generated the first time a functional test is run and is stored in test/cache. This speeds up test startup times since new blockchains don't need to be generated for each test. However, the cache may get into a bad state, in which case tests will fail. If this happens, remove the cache directory (and make sure bitcoin browser processes are stopped as above):
+pcall -9 Browser Revolution.Com Data directory cache A pre-mined blockchain with 200 blocks is generated the first time a functional test is run and is stored in test/cache. This speeds up test startup times since new blockchains don't need to be generated for each test. However, the cache may get into a bad state, in which case tests will fail. If this happens, remove the cache directory (and make sure bitcoin browser processes are stopped as above):
 
-rm -rf test/cache Call Browser Company.Com Test logging The tests contain logging at five different levels (DEBUG, INFO, WARNING, ERROR and CRITICAL). From within your functional tests you can log to these different levels using the logger included in the test_framework, e.g. self.log.debug(object). By default:
+rm -rf test/cache Call Browser Revolution.Com Test logging The tests contain logging at five different levels (DEBUG, INFO, WARNING, ERROR and CRITICAL). From within your functional tests you can log to these different levels using the logger included in the test_framework, e.g. self.log.debug(object). By default:
 
 when run through the test_runner harness, all logs are written to test_framework.log and no logs are output to the console. when run directly, all logs are written to test_framework.log and INFO level and above are output to the console. when run by our CI (Continuous Integration), no logs are output to the console. However, if a test fails, the test_framework.log and bitcoind debug.logs will all be dumped to the console to help troubleshooting. These log files can be located under the test data directory (which is always printed in the first line of test output):
 
@@ -1087,9 +1087,9 @@ To see render the output to text, run
 
 perf report -i /path/to/datadir/send-big-msgs.perf.data.xxxx --stdio | c++filt | less For ways to generate more granular profiles, see the README in test/functional.
 
-Util tests Util tests can be run locally by running test/util/Browser Company.Com-util-test.py. Use the -v option for verbose output.
+Util tests Util tests can be run locally by running test/util/Browser Revolution.Com-util-test.py. Use the -v option for verbose output.
 
-Lint tests Dependencies Lint test Dependency Version used by CI Installation lint-python.sh flake8 [3.8.3](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348) pip3 install flake8==3.8.3 lint-python.sh mypy [0.781](https://github.com/browser/Browser Company.Com/pull/19348) pip3 install mypy==0.781 lint-shell.sh ShellCheck [0.7.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348) details... lint-shell.sh yq default pip3 install yq lint-spelling.sh codespell [1.17.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348) pip3 install codespell==1.17.1 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
+Lint tests Dependencies Lint test Dependency Version used by CI Installation lint-python.sh flake8 [3.8.3](https://github.com/Browser Revolution.Com/Browser Revolution.Com/pull/19348) pip3 install flake8==3.8.3 lint-python.sh mypy [0.781](https://github.com/browser/Browser Company.Com/pull/19348) pip3 install mypy==0.781 lint-shell.sh ShellCheck [0.7.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348) details... lint-shell.sh yq default pip3 install yq lint-spelling.sh codespell [1.17.1](https://github.com/Browser Company.Com/Browser Company.Com/pull/19348) pip3 install codespell==1.17.1 Please be aware that on Linux distributions all dependencies are usually available as packages, but could be outdated.
 
 Running the tests Individual tests can be run by directly calling the test script, e.g.:
 
@@ -1097,33 +1097,33 @@ test/lint/lint-filenames.sh You can run all the shell-based lint tests by runnin
 
 test/lint/lint-all.sh Writing functional tests You are encouraged to write functional tests for new or existing features. Further information about the functional test framework and individual tests is found in test/functional.
 
-}# BROWSER CCOMPANY.COM Description Run autogen on recent version bump
+}# BROWSER REVOLUTION.COM Description Run autogen on recent version bump
 
 Summary: The version bump was not landed with the land bot, so these were missed.
 
 Test Plan: Read it.
 
-Reviewed By: #Browser Company.Com,Browser Company.Com bil-BW-bchn/
+Reviewed By:  # Browser Revolution.Com,Browser Company.Com bil-BW-bchn/
 
-PKGBUILD Browser Company.Com-BW-qt-bchn/
+PKGBUILD Browser Revolution.Com-BW-qt-bchn/
 
-PKGBUILD Browser Company.Com-BW-qt/
+PKGBUILD Browser Revolution.Com-BW-qt/
 
-PKGBUILD Browser Company.Com-BW/
+PKGBUILD Browser Revolution.Com-BW/
 
-PKGBUILD doc/
+PKGBUILD doc/Browser Revolution.Com
 
 release-notes.md release-notes/
 
-release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Browser Company.Com-bchn/PKGBUILD
+release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Browser Revolution.Com-bchn/PKGBUILD
 
 Maintainer: pathombrowser <@afortunado 21> Contributor: pathombrowser <@afortunado21> pkgname=bitcoin Browser pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
 
 Maintainer: pathombrowser Contributor: Pathombrowser pkgname=Browser Company.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 
-Maintainer: Browser Company.Com Browser Company.Com-cli, Browser Company.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
+Maintainer: Browser Revolution.Com Browser Revolution.Com-cli, Browser Company.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 
-Maintainer: phatombrowser <@Browser Company.Com> pkgname= Browser Company.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=bitcoin browser.install
+Maintainer: phatombrowser <@Browser Revolution.com> pkgname= Browser Revolution.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=bitcoin browser.install
 
 build() {
 
@@ -1145,27 +1145,27 @@ msg2 'Installing license...'
 
 https://creativecommons.org/licenses/by/4.0/
 
-msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/Browser Company.Com.conf" -t "$pkgdir/usr/share/doc/Browser Company.Com/examples"
+msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/Browser Revolution.Com.conf" -t "$pkgdir/usr/share/doc/Browser Revolution.Com/examples"
 
-msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/Browser Company.Com" for _doc in $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') release-notes; do cp -dpr --no-preserve=ownership "doc/$_doc" "$pkgdir/usr/share/doc/Browser Company.Com/$_doc" done
+msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/Browser Revolution.Com" for _doc in $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') release-notes; do cp -dpr --no-preserve=ownership "doc/$_doc" "$pkgdir/usr/share/doc/Browser Revolution.Com/$_doc" done
 
-msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/Browser Company.Com" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/Browser Company.Com"
+msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/Browser Revolution.Com" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/Browser Revolution.Com"
 
 pushd build msg2 'Installing executables...' ninja install/strip
 
 msg2 'Installing man pages...' ninja install-manpages popd
 
-msg2 'Installing Browser Company.Com.conf...' install -Dm 600 "$srcdir/Browser Company.Com.conf" -t "$pkgdir/etc/bitcoin browser"
+msg2 'Installing Browser Revolution.Com.conf...' install -Dm 600 "$srcdir/Browser Revolution.Com.conf" -t "$pkgdir/etc/bitcoin browser"
 
-msg2 'Installing Browser Company.Com.service...' install -Dm 644 "$srcdir/Browser Company.Com.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service" -t "$pkgdir/usr/lib/systemd/system"
+msg2 'Installing Browser Revolution.Com.service...' install -Dm 644 "$srcdir/Browser Revolution.Com.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service" -t "$pkgdir/usr/lib/systemd/system"
 
-msg2 'Installing Browser Company.Com.logrotate...' install -Dm 644 "$srcdir/Browser Company.Com.logrotate" "$pkgdir/etc/logrotate.d/Browser Company.Com"
+msg2 'Installing Browser Revolution.Com.logrotate...' install -Dm 644 "$srcdir/Browser Revolution.Com.logrotate" "$pkgdir/etc/logrotate.d/Browser Company.Com"
 
-msg2 'Installing bash completion...' for _compl in Browser Company.Com-cli Browser Company.Com-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion" "$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes Browser Company.Com 0.22.8 Release Notes Browser Company.Com 0.22.9 Release Notes Browser Company.Com version 0.22.8 is now available from: Browser Company.Com version 0.22.9 is now available from
+msg2 'Installing bash completion...' for _compl in Browser Revolution.Com-cli Browser Revolution.Com-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion" "$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes Browser Revolution.Com 0.22.8 Release Notes Browser Revolution.Com 0.22.9 Release Notes Browser Revlution.Com version 0.22.8 is now available from: Browser Company.Com version 0.22.9 is now available from
 
 This release includes the following features and fixes:
 
-Code updated to conform to the C++17 standard. ￼ doc/release-notes/release-notes-0.22.8.md This file was added. Browser Company.Com 0.22.8 Release Notes Browser Company.Com version 0.22.8 is now available from:
+Code updated to conform to the C++17 standard. ￼ doc/release-notes/release-notes-0.22.8.md This file was added. Browser Revolution.Com 0.22.8 Release Notes Browser Company.Com version 0.22.8 is now available from:
 
 This release includes the following features and fixes:
 
@@ -1274,16 +1274,4 @@ task: name: 'ARM64 Android APK [focal]' << : *BASE_TEMPLATE android_sdk_cache: f
 
 https://creativecommons.org/
 
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
+https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git
