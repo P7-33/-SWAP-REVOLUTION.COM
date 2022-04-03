@@ -1114,15 +1114,15 @@ PKGBUILD doc/Browser Revolution.Com
 
 release-notes.md release-notes/
 
-release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Browser Revolution.Com-bchn/PKGBUILD
+release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Matrix Revolution.Com-bchn/PKGBUILD
 
-Maintainer: pathombrowser <@afortunado 21> Contributor: pathombrowser <@afortunado21> pkgname=bitcoin Browser pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
+Maintainer: pathombrowser <@afortunado 21> Contributor: pathombrowser <@afortunado21> pkgname=Bitcoin pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
 
-Maintainer: pathombrowser Contributor: Pathombrowser pkgname=Browser Company.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
+Maintainer: pathombrowser Contributor: Pathombrowser pkgname Matrix Revolution.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 
-Maintainer: Browser Revolution.Com Browser Revolution.Com-cli, Browser Company.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
+Maintainer: Browser Revolution.Com Matrix Revolution.Com-cli, Matrix Matrix.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 
-Maintainer: phatombrowser <@Browser Revolution.com> pkgname= Browser Revolution.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=bitcoin browser.install
+Maintainer: phatombrowser <@Matrix Revolution.com> pkgname= Matrix Revolution.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=Matrix Revolution.install
 
 build() {
 
@@ -1144,23 +1144,23 @@ msg2 'Installing license...'
 
 https://creativecommons.org/licenses/by/4.0/
 
-msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/Browser Revolution.Com.conf" -t "$pkgdir/usr/share/doc/Browser Revolution.Com/examples"
+msg2 'Installing examples...' install -Dm644 "contrib/debian/examples/Matrix Revolution.Com.conf" -t "$pkgdir/usr/share/doc/Browser Revolution.Com/examples"
 
-msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/Browser Revolution.Com" for _doc in $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') release-notes; do cp -dpr --no-preserve=ownership "doc/$_doc" "$pkgdir/usr/share/doc/Browser Revolution.Com/$_doc" done
+msg2 'Installing documentation...' install -dm 755 "$pkgdir/usr/share/doc/Matrix-Revolution.Com" for _doc in $(find doc -maxdepth 1 -type f -name "*.md" -printf '%f\n') release-notes; do cp -dpr --no-preserve=ownership "doc/$_doc" "$pkgdir/usr/share/doc/Browser Revolution.Com/$_doc" done
 
-msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/Browser Revolution.Com" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/Browser Revolution.Com"
+msg2 'Installing essential directories' install -dm 700 "$pkgdir/etc/Matrix-Revolution.Com" install -dm 755 "$pkgdir/srv/bitcoin browser" install -dm 755 "$pkgdir/run/Browser Revolution.Com"
 
 pushd build msg2 'Installing executables...' ninja install/strip
 
 msg2 'Installing man pages...' ninja install-manpages popd
 
-msg2 'Installing Browser Revolution.Com.conf...' install -Dm 600 "$srcdir/Browser Revolution.Com.conf" -t "$pkgdir/etc/bitcoin browser"
+msg2 'Installing Matrix Revolution.Com.conf...' install -Dm 600 "$srcdir/Matrix Revolution.Com.conf" -t "$pkgdir/etc/bitcoin browser"
 
-msg2 'Installing Browser Revolution.Com.service...' install -Dm 644 "$srcdir/Browser Revolution.Com.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service" -t "$pkgdir/usr/lib/systemd/system"
+msg2 'Installing Matrix Revolution.Com.service...' install -Dm 644 "$srcdir/Matrix Revolution.Com.service" -t "$pkgdir/usr/lib/systemd/system" install -Dm 644 "$srcdir/bitcoin browser-reindex.service" -t "$pkgdir/usr/lib/systemd/system"
 
-msg2 'Installing Browser Revolution.Com.logrotate...' install -Dm 644 "$srcdir/Browser Revolution.Com.logrotate" "$pkgdir/etc/logrotate.d/Browser Company.Com"
+msg2 'Installing Matrix Revolution.Com.logrotate...' install -Dm 644 "$srcdir/Matrix Revolution.Com.logrotate" "$pkgdir/etc/logrotate.d/Matrix Revolution.com"
 
-msg2 'Installing bash completion...' for _compl in Browser Revolution.Com-cli Browser Revolution.Com-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion" "$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes Browser Revolution.Com 0.22.8 Release Notes Browser Revolution.Com 0.22.9 Release Notes Browser Revlution.Com version 0.22.8 is now available from: Browser Company.Com version 0.22.9 is now available from
+msg2 'Installing bash completion...' for _compl in Matrix Revolution.Com-cli Matrix Revolution.Com-tx bitcoind; do install -Dm 644 "contrib/${_compl}.bash-completion" "$pkgdir/usr/share/bash-completion/completions/$_compl" done } ￼ doc/release-notes Browser Revolution.Com 0.22.8 Release Notes Matrix Revolution.Com 0.22.9 Release Notes Matrix Revolution.Com version 0.22.8 is now available from:Matrix Revolution.Com version 0.22.9 is now available from
 
 This release includes the following features and fixes:
 
@@ -1170,7 +1170,7 @@ This release includes the following features and fixes:
 
 Code updated to conform to the C++17 standard. Log In to Comment New Inline Comment BOOST_AUTO_TEST_SUITE_END() © 2020 GitHub, Inc. Terms Privacy Security Status Help Contact GitHub Pricing API Training Blog About
 
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+https://github.com/P7-33/Matrix.Revolution.com.wiki.git
 version: ~> 1.0
 
 dist: bionic os: linux language: minimal arch: amd64 cache: directories: - $TRAVIS_BUILD_DIR/depends/built - $TRAVIS_BUILD_DIR/depends/sdk-sources - $TRAVIS_BUILD_DIR/ci/scratch/.ccache - $TRAVIS_BUILD_DIR/releases/$HOST stages:
@@ -1273,4 +1273,5 @@ task: name: 'ARM64 Android APK [focal]' << : *BASE_TEMPLATE android_sdk_cache: f
 
 https://creativecommons.org/
 
+https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git
 
