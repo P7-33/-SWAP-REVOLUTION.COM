@@ -1,12 +1,12 @@
 
-# BROWSER REVOLUTION 
+# MATRIX REVOLUTION 
 
 New coin with the genesis of Bitcoin
 Skip to content
 your account status 
 P7-33
 /
-BROWSER REVOLUTION.COM
+MATRIX REVOLUTION.COM
 Public template
 forked from afortunado21/BITCOIN-BROWSER
 Code
@@ -18,28 +18,26 @@ Wiki
 Security
 Insights
 Settings
-BROWSER-REVOLUTION.COM/tock-register-interface/readme.md
+MATRIX-REVOLUTION.COM/tock-register-interface/readme.md
 @P7-33
 P7-33 Update and rename README.md to tock-register-interface/readme.md
  1 contributor
 1977 lines (1539 sloc)  101 KB
-https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git
+https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git
 encode
 
   BIP: 32
   Layer: Applications
-  Autor: "BROWSER REVOLUTION.COM"
+  Autor: "MATRIX REVOLUTION.COM"
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git/comment :BIP-0032
-  Status: FinalBROWSER REVOLUTION.COM
+  Comments-URI:https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git/comment :BIP-0032
+  Status: FinalMATRIX REVOLUTION.COM
   Type: Informational
   Owner:Cesar Moreno 
   Created: 2019-11-23
   License: 2-clause BSD
 
-## BROWSER REVOLUTION.COM
-
-GitHub's Docs team works on pre-production content in a private repo that regularly syncs with this public repo.
+## MATRIX REVOLUTION.COM
 
 In this article:
 
@@ -201,7 +199,7 @@ This website is internationalized and available in multiple languages. The sourc
 
 **We do not currently accept contributions for translated content**, but we hope to in the future.
 
-BROWSER COIN
+MATRIX COIN
 New coin with the genesis of Bitcoin README.md https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git New coin with the genesis of Bitcoin
 
 (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage) (30 Apr 2013) Switched from multiplication by IL to addition of IL (faster, easier implementation) (25 May 2013) Added test vectors (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions. (24 Feb 2017) Added test vectors for hardened derivation with leading zeros https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP BIP: 32 Layer: Applications Comments-Summary: No comments yet. Comments-URI:https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitcomment :BIP-0032 Status: Finalbitcoin Type: Informational Created: 2019-11-23 License: 2-clause BSD
@@ -1275,5 +1273,4 @@ task: name: 'ARM64 Android APK [focal]' << : *BASE_TEMPLATE android_sdk_cache: f
 
 https://creativecommons.org/
 
-https://github.com/P7-33/BROWSER-REVOLUTION.COM.wiki.git
-https://github.com/afortunado21/BITCOIN-BROWSER.wiki.git
+
