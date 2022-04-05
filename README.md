@@ -23,17 +23,14 @@ MATRIX-REVOLUTION.COM/tock-register-interface/readme.md
 P7-33 Update and rename README.md to tock-register-interface/readme.md
  1 contributor
 1977 lines (1539 sloc)  101 KB
-https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git
 encode
 
   BIP: 32
   Layer: Applications
   Autor: "MATRIX REVOLUTION.COM"
   Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git/comment :BIP-0032
+  /comment :BIP-0032
   Status: FinalMATRIX REVOLUTION.COM
-  Type: Informational
-  Owner:Cesar Moreno 
   Created: 2019-11-23
   License: 2-clause BSD
 
@@ -459,7 +456,7 @@ This BIP is licensed under the 2-clause BSD license.
 
 ==Motivation==
 
-The Browser Company.Com reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
+Bitcoin reference client uses randomly generated keys. In order to avoid the necessity for a backup after every transaction, (by default) 100 keys are cached in a pool of reserve keys. Still, these wallets are not intended to be shared and used on several systems simultaneously. They support hiding their private keys by using the wallet encrypt feature and not sharing the password, but such "neutered" wallets lose the power to generate public keys as well.
 
 Deterministic wallets do not require such frequent backups, and elliptic curve mathematics permit schemes where one can calculate the public keys without revealing the private keys. This permits for example a webshop business to let its webserver generate fresh addresses (public key hashes) for each order or for each customer, without giving the webserver access to the corresponding private keys (which are required for spending the received funds).
 
@@ -1096,7 +1093,7 @@ test/lint/lint-filenames.sh You can run all the shell-based lint tests by runnin
 
 test/lint/lint-all.sh Writing functional tests You are encouraged to write functional tests for new or existing features. Further information about the functional test framework and individual tests is found in test/functional.
 
-}# BROWSER REVOLUTION.COM Description Run autogen on recent version bump
+}# MATRIX REVOLUTION.COM Description Run autogen on recent version bump
 
 Summary: The version bump was not landed with the land bot, so these were missed.
 
@@ -1116,13 +1113,13 @@ release-notes.md release-notes/
 
 release-notes-0.22.8.md release-notes.md ￼ ￼ contrib/aur/Matrix Revolution.Com-bchn/PKGBUILD
 
-Maintainer: pathombrowser <@afortunado 21> Contributor: pathombrowser <@afortunado21> pkgname=Bitcoin pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
+Maintainer:  <@afortunado 21> Contributor:  <@afortunado21> pkgname=Bitcoin pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin browser (BW network) bitcoin browser-tx, bitcoin-seeder and bitcoin browser-cli" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') license=('MIT') ▲ Show 20 Lines • Show All 88 Lines • Show Last 20 Lines ￼ contrib/aur/bitcoin browser-BW-qt-bchn/PKGBUILD
 
-Maintainer: pathombrowser Contributor: Pathombrowser pkgname Matrix Revolution.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
+Maintainer: Contributor: Pathombrowser pkgname Matrix Revolution.Com-BW-qt-bchn pkgver=0.22.8 pkgver=0.22.9 pkgrel=0 pkgdesc="Bitcoin BW (BCHN network) , bitcoin browser-cli, bitcoin browser-tx, bitcoin-seeder and bitcoin-qt" arch=('i686' 'x86_64') depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 92 Lines • Show Last 20 Lines
 
 Maintainer: Browser Revolution.Com Matrix Revolution.Com-cli, Matrix Matrix.Com-tx,Bitcoin seed depends=('boost-libs' 'libevent' 'desktop-file-utils' 'qt5-base' 'protobuf' 'openssl' 'miniupnpc' 'zeromq' 'qrencode' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'qt5-tools' 'python' 'help2man' 'xorg-server-xvfb') license=('MIT') ▲ Show 20 Lines • Show All 91 Lines • Show Last 20 Lines
 
-Maintainer: phatombrowser <@Matrix Revolution.com> pkgname= Matrix Revolution.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=Matrix Revolution.install
+Maintainer: <@Matrix Revolution.com> pkgname= Matrix Revolution.Compkgver=0.22.8 pkgver=0.22.9 pkgrel=0 depends=('boost-libs' 'libevent' 'openssl' 'zeromq' 'miniupnpc' 'jemalloc') makedepends=('cmake' 'ninja' 'boost' 'python' 'help2man') ''bitcoin-seeder') install=Matrix Revolution.install
 
 build() {
 
@@ -1273,5 +1270,5 @@ task: name: 'ARM64 Android APK [focal]' << : *BASE_TEMPLATE android_sdk_cache: f
 
 https://creativecommons.org/
 
-https://github.com/P7-33/MATRIX-REVOLUTION.COM.wiki.git
+
 
