@@ -1,22 +1,22 @@
-encode:Browser Coin Company.Com
+
 /
-Browser Coin Company.Com
+
 Public
-forked from Browser Coin Company.Com/Browser Coin Company.Com
+forked 
 Code
 Pull requests
 Actions
 Projects
 Security
 Insights
-Browser Coin.Com/.cirrus.yml
-@MarcoFalke
+
+
 MarcoFalke ci: Adjust cirrus ci task names
  4 contributors
 161 lines (145 sloc)  5.36 KB
 ### Global defaults
 
-timeout_in: 120m  # https://cirrus-ci.org/faq/#instance-timed-out
+timeout_in: 120m  # 
 container:
   # https://cirrus-ci.org/faq/#are-there-any-limits
   # Each project has 16 CPU in total, assign 2 to each container, so that 8 tasks run in parallel
@@ -39,11 +39,11 @@ global_task_template: &GLOBAL_TASK_TEMPLATE
   ccache_cache:
     folder: "/tmp/ccache_dir"
   depends_built_cache:
-    folder: "/tmp/cirrus-ci-build/depends/built"
+    folder: 
   depends_sdk_cache:
-    folder: "/tmp/cirrus-ci-build/depends/sdk-sources"
+    folder: 
   depends_releases_cache:
-    folder: "/tmp/cirrus-ci-build/releases"
+    folder: 
   merge_base_script:
     - if [ "$CIRRUS_PR" = "" ]; then exit 0; fi
     - bash -c "$PACKAGE_MANAGER_INSTALL git"
