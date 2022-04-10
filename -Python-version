@@ -1,8 +1,8 @@
 
-# BROWSER COIN
+# 
 Code
 3.6.12
-https://BROWSER-COMPANY.COM/P7-33github.io
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
