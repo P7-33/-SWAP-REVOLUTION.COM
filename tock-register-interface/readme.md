@@ -1,22 +1,19 @@
-[id]: url/to/image  "BROWSER COMPANY.COM"
 
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git
+
+
 
 # BROWSER COIN
 
-New coin with the genesis of Bitcoin
-README.md
-https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.git New coin with the genesis of Bitcoin
+New coin with the genesis of  New coin with the genesis of Bitcoin
 
 (16 Apr 2013) Added private derivation for i ≥ 0x80000000 (less risk of parent private key leakage)
 (30 Apr 2013) Switched from multiplication by IL to addition of IL (faster, easier implementation)
 (25 May 2013) Added test vectors
 (15 Jan 2014) Rename keys with index ≥ 0x80000000 to hardened keys, and add explicit conversion functions.
-(24 Feb 2017) Added test vectors for hardened derivation with leading zeros https://braiins.com/os/plus?utm_source=SP&utm_medium=aboutP
+(24 Feb 2017) Added test vectors for hardened derivation with leading zeros 
   BIP: 32
   Layer: Applications
-  Comments-Summary: No comments yet.
-  Comments-URI:https://github.com/P7-33/BROWSER-COMPANY.COM.wiki.gitcomment :BIP-0032
+  Comments-Summary: No comments gitcomment :BIP-0032
   Status: Finalbitcoin
   Type: Informational
   Created: 2019-11-23
@@ -682,36 +679,33 @@ RFC 4231         HMAC-SHA Identifiers and Test Vectors
                   0b0b0b0b                          (20 bytes)
    Data =         4869205468657265                  ("Hi There")
 
-   HMAC-SHA-224 = 896fb1128abbdf196832107cd49df33f
-                  47b4b1169912ba4f53684b22
-   HMAC-SHA-256 = b0344c61d8db38535ca8afceaf0bf12b
-                  881dc200c9833da726e9376c2e32cff7
-   HMAC-SHA-384 = afd03944d84895626b0825f4ab46907f
-                  15f9dadbe4101ec682aa034c7cebc59c
-                  faea9ea9076ede7f4af152e8b2fa9cb6
-   HMAC-SHA-512 = 87aa7cdea5ef619d4ff0b4241a1d6cb0
-                  2379f4e2ce4ec2787ad0b30545e17cde
-                  daa833b7d6b8a702038b274eaea3f4e4
-                  be9d914eeb61f1702e696c203a126854
+   
+   HMAC-SHA-256 
+                  
+   HMAC-SHA-384 = 
+                  
+                  
+   HMAC-SHA-512 
+                  
 
 4.3.  Test Case 2
 
    Test with a key shorter than the length of the HMAC output.
 
-   Key =          4a656665                          ("Jefe")
-   Data =         7768617420646f2079612077616e7420  ("what do ya want ")
-                  666f72206e6f7468696e673f          ("for nothing?")
+   Key =                                   
+   Data 
+                        
 
-   HMAC-SHA-224 = a30e01098bc6dbbf45690f3a7e9e6d0f
-                  8bbea2a39e6148008fd05e44
-   HMAC-SHA-256 = 5bdcc146bf60754e6a042426089575c7
-                  5a003f089d2739839dec58b964ec3843
-   HMAC-SHA-384 = af45d2e376484031617f78d2b58a6b1b
-                  9c7ef464f5a01b47e42ec3736322445e
-                  8e2240ca5e69e2c78b3239ecfab21649
-   HMAC-SHA-512 = 164b7a7bfcf819e2e395fbe73b56e0a3
-                  87bd64222e831fd610270cd7ea250554
-                  9758bf75c05a994a6d034f65f8f0e6fd
+   HMAC-SHA-224 = 
+                  
+   HMAC-SHA-256 = 
+                  
+   HMAC-SHA-384 = 
+                  
+                  
+   HMAC-SHA-512 = 
+                  
+                  
                   
 
 RFC 4231         HMAC-SHA Identifiers and Test Vectors     
