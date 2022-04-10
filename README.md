@@ -1,40 +1,34 @@
 
-# SWAP REVOLUTION 
 
 New coin with the genesis of Bitcoin
 Skip to content
 your account status 
 P7-33
 /
-SWAP REVOLUTION.COM
+
 Public template
-forked from afortunado21/BITCOIN-BROWSER
+forked from 
 Code
 Pull requests
 Actions
 Projects
 2
 Wiki
-Security
-Insights
-Settings
-SWAP-REVOLUTION.COM/tock-register-interface/readme.md
-@P7-33
-P7-33 Update and rename README.md to tock-register-interface/readme.md
+Update and rename README.md to tock-register-interface/readme.md
  1 contributor
 1977 lines (1539 sloc)  101 KB
 encode
 
   BIP: 32
   Layer: Applications
-  Autor: "SWAP REVOLUTION.COM"
+  Autor: 
   Comments-Summary: No comments yet.
   /comment :BIP-0032
-  Status: FinalSWAP REVOLUTION.COM
+  
   Created: 2019-11-23
   License: 2-clause BSD
 
-## SWAP REVOLUTION.COM
+
 
 In this article:
 
@@ -42,9 +36,9 @@ In this article:
 - [READMEs](#readmes)
 - [License](#license)
 
-## Contributing
 
-- This site is powered by Node.js. Check to see if you're on the [version of node we support](contributing/development.md).
+
+- This site is powered by Node.js. Check to see if you're on the [version of node 
 - Have you read the [code of conduct](CODE_OF_CONDUCT.md)?
 - Check [accept contributions](#types-of-contributions-memo) for 
 
